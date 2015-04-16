@@ -20,9 +20,9 @@ $bp-guide: new-breakpoint(min-width 600px);
     }
 
     &:hover {
-      background-color: $teal;
+      background-color: transparentize($teal, .5);
       transition: padding .2s ease;
-      padding-left: .5em;
+      padding-left: .25em;
 
     }
   }
