@@ -1,2 +1,4 @@
-@import 'bower_components/newsapps-styles/init-helpers';
-@import 'bower_components/newsapps-styles/initialize';
+// @import 'bower_components/newsapps-styles/init-helpers';
+@import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'bower_components/neat/app/assets/stylesheets/neat';
+@import 'node_modules/newsapps-styles/initialize';
