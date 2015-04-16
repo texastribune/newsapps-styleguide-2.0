@@ -1,0 +1,12 @@
+.newsapps-logo {
+  float: left;
+  margin-right: 1em;
+}
+
+.main {
+  @include span-columns(9);
+  @include omega();
+
+  border: 1px solid;
+  height: 1000px;
+}

@@ -1,0 +1,30 @@
+$bp-guide: new-breakpoint(min-width 600px);
+
+.side-nav {
+  @include span-columns(3);
+  @include clearfix;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    border-bottom: 1px solid $background-gray;
+    vertical-align: middle;
+
+    a {
+      color: $bodytext-black;
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $teal;
+      transition: padding .2s ease;
+      padding-left: .5em;
+
+    }
+  }
+
+}
