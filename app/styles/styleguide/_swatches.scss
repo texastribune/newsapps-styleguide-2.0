@@ -1,0 +1,15 @@
+.swatches {
+  @include list-grid($default-desktop, 12, 3);
+
+  li {
+    background-color: $background-gray;
+    padding: .5em;
+    margin-bottom: .5em;
+    text-align: center;
+  }
+}
+
+.swatch {
+  height: 4em;
+  width: 100%;
+}
