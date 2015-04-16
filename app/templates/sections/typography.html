@@ -1,0 +1,82 @@
+<article id="typography">
+  <header id="typography" >
+    <h2 class="font-xl">Typography</h2>
+  </header>
+  <p>Typography styles can be found in helpers/_typography.scss. Georgia is our $base-serif font, and Helvetica Neue is our $base-sans-serif.</p>
+  <header id="font-sizes">
+    <h3 class="font-m">Font-Sizes</h3>
+  </header>
+  <p>The $base font-size is 16px. In addition, there are six preset font-sizes assigned to the variables $xxl, $xl, $l, $m, $s, $xs. Those sizes correspond to the number of HTML header elements, but &lt;h1&gt;-&lt;h6&gt; do not have any assigned font-sizes. For flexibility, we've created a series of font-size classes that can be assigned to any element and %placeholders that can be extended to additional classes. For example, you may add the class .font-xxl to an &lt;h1&gt; element, @extend %font-xxl to all &lt;h1&gt; elements, or create a new class, .project-header with @extend %font-xxl.</p>
+
+  <h1 class="font-xxl">This is a class .font-xxl</h1>
+  <h2 class="font-xl">This is a class .font-xl</h2>
+  <h3 class="font-l">This is a class .font-l</h3>
+  <h4 class="font-m">This is a class .font-m</h4>
+  <h5 class="font-s">This is a class .font-s</h5>
+  <h6 class="font-xs">This is a class .font-xs</h6>
+
+  <p>The @mixin font-size() is called on the preset font-size variables on each of the .font-size classes, but it can be called on any class to set a particular module's font-size.</p>
+  <p>The @mixin font-size() takes three arguments &mdash; $font-size-number, $breakpoint and $percent. On the preset font-size classes and placeholders, we've added a $default-mobile breakpoint to reduce the relative font-size by 10%. It's used to change the font-size by a percentage at a certain breakpoint. For example, you could include the mixin to make paragraphs 88% percent smaller on screens 480 pixels or less. Change the size of your screen to preview how this mixin works.</p>
+  <div class="code-block">
+    <div class="button">Show Typography Code</div>
+    <pre>
+      <code>
+      // Font Sizes
+      $base: 16;
+      $xxl: 48;
+      $xl: 36;
+      $l: 28;
+      $m: 22;
+      $s: 14;
+      $xs: 12;
+
+      @mixin font-size($f, $bp, $pct) {
+        font-size: $f+px; // for IE8
+        font-size: $f/$base+rem;
+
+        @include media($bp) {
+          font-size: $f*$pct+px; // for IE8
+          font-size: $f*$pct/$base+rem;
+        }
+      }
+
+      // These classes can be applied to any element
+      // to set the font-size.
+      %font-xxl,
+      .font-xxl {
+        @include font-size($xxl, $default-mobile, .9);
+      }
+
+      %font-xl,
+      .font-xl {
+        @include font-size($xl, $default-mobile, .9);
+      }
+
+      %font-l,
+      .font-l {
+        @include font-size($l, $default-mobile, .9);
+      }
+
+      %font-m,
+      .font-m {
+        @include font-size($m, $default-mobile, .9);
+      }
+
+      %font-base,
+      .font-base {
+        @include font-size($base, $default-mobile, .9);
+      }
+
+      %font-s,
+      .font-s {
+        @include font-size($s, $default-mobile, .9);
+      }
+
+      %font-xs,
+      .font-xs {
+        @include font-size($xs, $default-mobile, .9);
+      }
+      </code>
+    </pre>
+  </div>
+</article>

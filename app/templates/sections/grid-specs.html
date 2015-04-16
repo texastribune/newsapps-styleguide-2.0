@@ -7,12 +7,12 @@
   <p>To include an element in a responsive grid design, add the class .container to the parent-most HTML element. We've overriden Bourbon's $max-width to 1081px, which is typical for our app projects. To change how wide the grid can stretch, set the variable $max-width in your project.</p>
 
   <header>
-    <h3 class="font-l">Content-Block</h3>
+    <h3 class="font-m">Content-Block</h3>
   </header>
   <p>Content-blocks are used to ensure that an element does not bump against the edge of the screen on smaller devices or window-sizes. Add the class .content-block to add a 10px left/right margin at all times, or add "@extend %content-block" to the parent-most element's styles. </p>
 
   <header>
-    <h3 class="font-l">Breakpoints</h3>
+    <h3 class="font-m">Breakpoints</h3>
   </header>
   <p>For ease of use, we've created 2 types of default breakpoints &mdash; both of which you can override to best fit your project. There are $default-mobile and $default-desktop, which set max and min widths, respectively. And there are $small, $medium and $large default breakpoints for mobile-first web design with multiple layouts. All of these variables can be reset for your specific project needs.</p>
   <p>Many modules also have unique breakpoint variables included at the top of the file, which are set to $default-desktop or $default-mobile. You can change the module's breakpoint by giving that variable a new value.</p>
