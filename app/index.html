@@ -6,13 +6,16 @@
 
 {% block content %}
 <div class="container">
-  <header class="content-block">
+  <section class="logo">
     <img class="newsapps-logo" src="images/news_apps_logo.png"></img>
-    <h1 class="font-xxl">Style Guide</h1>
-    <p>Welcome to the Texas Tribune News Apps Style Guide &mdash; a constant work-in-progress.</p>
-  </header>
-
-  <hr class="yellow">
+  </section>
+  <section class="styleguide-header">
+    <header class="content-block">
+      <h1 class="font-xxl">Style Guide</h1>
+      <p>Welcome to the Texas Tribune News Apps Style Guide &mdash; a constant work-in-progress.</p>
+    </header>
+    <hr class="yellow">
+  </section>
 
   <section id="side-nav" class="side-nav">
     <ul>
@@ -22,9 +25,13 @@
       <li><a href="#prose">Prose</a></li>
     </ul>
   </section>
-
   <section class="main">
 
+
+
+
+
+    {% include "templates/sections/grid-specs.html" %}
   </section>
 </div>
 

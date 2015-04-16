@@ -1,9 +1,13 @@
-.newsapps-logo {
-  float: left;
-  margin-right: 1em;
-}
-
+.styleguide-header,
 .main {
   @include span-columns(9);
   @include omega();
+}
+
+.newsapps-logo {
+  @include clearfix;
+  max-width: 10em;
+  padding: 1em;
+  text-align: center;
+  width: 100%;
 }
