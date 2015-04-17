@@ -79,4 +79,93 @@
       </code>
     </pre>
   </div>
+
+  <header id="#base-elements">
+    <h3 class="font-m">Base elements</h3>
+  </header>
+  <p>The only place that base HTML elements should be given styles is in the helpers/_base.scss file. Few typography styles are assigned directly to HTML elements. All elements in the &lt;body&gt; will be in $base-sans-serif, font-size 16px, and line-height: 1 &mdash; unless otherwise specified.</p>
+  <p>Headers, paragraphs, links and unordered lists are the only HTML elements with additional typography styles. The only style applied to &lt;h1&gt;-&lt;h6&gt; is "font-weight: 400," to normalize any bold settings that a browser may inadvertently apply. Also, because we often use unordered lists to create additional components, the base &lt;ul&gt; element does not include padding, margins or a list-style. For a bulleted list, include the class .bullet.</p>
+  <p>This is a paragraph with a <a href="">fake link</a>.</p>
+  <ul>
+    <li>This is a regular list.</li>
+    <li>It's basically the same as a paragraph</li>
+    <li>Except sans-serif.</li>
+  </ul>
+  <ul class="bullet">
+    <li>This list has class .bullet</li>
+    <li>Because we like our bullet points dotted.</li>
+  </ul>
+  <div class="code-block">
+    <div class="button">Show HTML</div>
+    <pre>
+      <code>
+        &lt;p&gt;This is a paragraph. It's one of few elements that has styles
+        applied directly to the element class.
+        &lt;a href=""&gt;Links&lt;/a&gt; are automatically colored
+        $tribune-teal and have text-decoration removed.&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;This is a regular list.&lt;/li&gt;
+          &lt;li&gt;Of items&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="disc"&gt;
+          &lt;li&gt;This list has class .disc&lt;/li&gt;
+          &lt;li&gt;Because its dotted.&lt;/li&gt;
+        &lt;/ul&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <div class="button">Show Base Styles</div>
+    <pre>
+      <code>
+      /* Base Theme for HTML elements */
+
+      body {
+        @extend %font-base;
+        background-color: $white;
+        font-family: $base-sans-serif;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1;
+        text-rendering: optimizelegibility;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 400;
+      }
+
+      p {
+        @extend %font-base;
+        font-family: $base-serif;
+        font-weight: 400;
+        line-height: 1.4em;
+      }
+
+      a {
+        color: $href-teal;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      ul {
+        @extend %font-base;
+        font-family: $base-sans-serif;
+        list-style: none;
+        padding: 0;
+
+        &.bullet {
+          list-style: disc;
+          padding: 0 1em;
+        }
+      }
+      </code>
+    </pre>
+  </div>
 </article>

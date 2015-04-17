@@ -2,9 +2,11 @@ $bp-guide: new-breakpoint(min-width 600px);
 
 .logo,
 .side-nav {
-  @include span-columns(3);
+  @include media($default-desktop) {
+    @include span-columns(3);
+  }
+
   @include clearfix;
-  // position: fixed;
 
   ul {
     margin: 0;

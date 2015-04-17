@@ -1,0 +1,209 @@
+<article id="grid-mixins">
+  <header>
+    <h2 class="font-l">Grid Mixins</h2>
+  </header>
+  <p>Bourbon Neat has a variety of built-in mixins that you should use to create the grid. In addition, we've added mixins that you may find useful. These can be found in helpers/_mixins.scss.</p>
+
+  <header>
+    <h3 class="font-m">Bourbon's Neat Mixins</h3>
+  </header>
+  <p>Here is the <a href="http://thoughtbot.github.io/neat-docs/latest/"> full documentation</a>, and these are the mixin you'll use most often.</p>
+  <ul class="bullet">
+    <li><a href="http://thoughtbot.github.io/neat-docs/latest/#span-columns">@mixin span-columns($number-of-columns)</a> &mdash; sets the number of columns you want your section, article, div or whatever to span. Max = 12.</li>
+    <li><a href="http://thoughtbot.github.io/neat-docs/latest/#omega">@mixin omega()</a> &mdash; removes padding-right.</li>
+    <li><a href="http://thoughtbot.github.io/neat-docs/latest/#media">@mixin media($query, $total-columns: $grid-columns)</a> &mdash; simple media Query.</li>
+  </ul>
+
+  <header>
+    <h3 class="font-m">Clearfix</h3>
+  </header>
+  <p>Bourbon Neat's grid mixins add floats to HTML elements, so they'll sit in the grid properly. Sometimes, you'll need to clear these floats, so that your content doesn't accidentally overlap or line-up weird.</p>
+  <div class="code-block">
+    <div class="button">Show @mixin clearfix</div>
+    <pre>
+      <code>
+        @mixin clearfix {
+          &:after {
+           visibility: hidden;
+           display: block;
+           font-size: 0;
+           content: " ";
+           clear: both;
+           height: 0;
+         }
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-m">Omega Reset</h3>
+  </header>
+  <p>Occasionally you'll need to reset Bourbon Neat's count of elements, so that it will add @mixin omega() to the correct element. The @mixin omega-reset is adapted from Josh Fry's example, and you can find more info <a href="http://www.joshfry.me/blog/2013/05/13/omega-reset-for-bourbon-neat/">here</a>.</p>
+  <div class="code-block">
+    <div class="button">Show @mixin omega-reset</div>
+    <pre>
+      <code>
+        @mixin omega-reset($nth) {
+          &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+          &:nth-child(#{$nth}+1) { clear: none }
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-m">Mobile vs. Desktop Mixins</h3>
+  </header>
+  <p>Sometimes you'll want to hide an element on Desktop or Mobile. We've created a series of mixins to help:</p>
+  <ul class="bullet">
+    <li>@mixin hide($breakpoint) &mdash; hide content at any given breakpoint.</li>
+    <li>@mixin mobile-only() &mdash; display on mobile, hide content on default $small, $medium and $large breakpoints.</li>
+    <li>@mixin desktop-only() &mdash; hide on mobile, display content on default $small, $medium and $large breakpoints.</li>
+    <li>@mixin desktop-hide() &mdash; display on mobile and default $small breakpoint, hide on default $medium and $large breakpoints.</li>
+    <li>@mixin mobile-hide() &mdash; hide on mobile and default $small breakpoint, display on default $medium and $large breakpoints.</li>
+  </ul>
+  <div class="code-block">
+    <div class="button">Show Desktop/Mobile @mixins</div>
+    <pre>
+      <code>
+        // Mobile vs. Desktop Mixins
+        // =========================
+
+        @mixin hide($bp) {
+          @include media($bp) {
+            display: none;
+          }
+        }
+
+        @mixin mobile-only {
+          display: block;
+
+          @include media($small) {
+            display: none;
+          }
+
+          @include media($medium) {
+            display: none;
+          }
+
+          @include media($large) {
+            display: none;
+          }
+        }
+
+        @mixin desktop-only {
+          display: none;
+
+          @include media($small) {
+            display: block;
+          }
+
+          @include media($medium) {
+            display: block;
+          }
+
+          @include media($large) {
+            display: block;
+          }
+        }
+
+        @mixin desktop-hide {
+          display: block;
+
+          @include media($small) {
+            display: block;
+          }
+
+          @include media($medium) {
+            display: none;
+          }
+
+          @include media($large) {
+            display: none;
+          }
+        }
+
+        @mixin mobile-hide {
+          @include clearfix;
+          display: none;
+
+          @include media($small) {
+            display: none;
+          }
+
+          @include media($medium) {
+            display: block;
+          }
+
+          @include media($large) {
+            display: block;
+          }
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-m">Layouts</h3>
+  </header>
+  <p>We created the following mixins for layouts that we use in different ways across projects. For example, the @mixin features-layout creates a standard single column story layout with additional white space on larger views.</p>
+  <div class="code-block">
+    <div class="button">Show @mixin features-layout</div>
+    <pre>
+      <code>
+        // Features-Layout
+        // ---------------
+        // To add white-space around prose for feature projects
+        @mixin features-layout ($bp) {
+          @include span-columns(12);
+          @include media($bp) {
+            @include span-columns(10 of 12);
+            @include shift(1);
+          }
+        }
+      </code>
+    </pre>
+  </div>
+  <p>You can also create a grid using lists or divs. If your grid needs a a single breakpoint, use @mixin list-grid or @mixin div-grid, which allow you to define the $breakpoint, $total-column-width and $number-of-items in your grid.</p>
+  <div class="code-block">
+    <div class="button">Show @mixin list-grid/div-grid</div>
+    <pre>
+      <code>
+        @mixin list-grid ($bp, $col-width, $number-li) {
+        // Creates a grid for list items at single breakpoint
+        // $bp = breakpoint
+        // $col-width = the number of span-columns in your grid
+        // $number-li = the number of list items
+
+        ul {
+          @include span-columns($col-width);
+          @include pad(0);
+
+          li {
+            @include span-columns($col-width of $col-width);
+            @include media($bp) {
+              @include span-columns($col-width / $number-li of $col-width);
+              @include omega($number-li+n);
+            }
+          }
+        }
+      }
+
+      @mixin div-grid ($bp, $col-width, $number-div) {
+        // Create a div grid with single breakpoint
+        // $bp = breakpoint
+        // $col-width = the number of span-columns in your grid
+        // $number-div = the number of divs
+
+        @include media($bp) {
+          div {
+            @include span-columns($col-width / $number-div of $col-width);
+            @include omega($number-div+n);
+          }
+        }
+      }
+      </code>
+    </pre>
+  </div>
+</article>
