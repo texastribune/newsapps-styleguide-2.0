@@ -241,7 +241,7 @@
     <div class="button">Show HTML</div>
     <pre>
       <code>
-      &lt;div class="block"&gt;
+      &lt;div class="prose-block"&gt;
         &lt;h2 class="block-quote"&gt;&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;&lt;/h2&gt;
         &lt;p class="block-quote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
       &lt;/div&gt;
@@ -272,4 +272,23 @@
       </code>
     </pre>
   </div>
+
+  <header>
+    <div class="font-m">Select &amp; Input</div>
+  </header>
+  <p>The classes .prose and .graphic include base styles for &lt;select&gt; and &lt;input&gt; fields. If you add these elements outside of .prose or .graphic, they will not have any styles applied.</p>
+  <div class="prose">
+    <select class="full-width">
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+
+    <form action="demo_form.asp">
+      <input type="text" name="FirstName" placeholder="Hello world!">
+      <input type="submit" value="Submit" class="button">
+    </form>
+  </div>
+
+
 </article>
