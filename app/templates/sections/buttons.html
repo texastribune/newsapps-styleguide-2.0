@@ -1,0 +1,42 @@
+<article id="buttons">
+  <header>
+    <h3 class="font-l">Buttons</h3>
+  </header>
+  <p>Add the @mixin button($color) to create any color button with the basic button styles. Button styles are not applied to the &lt;button&gt; tag directly. For standard buttons, use .button, which has @mixin button($tribune-yellow) included.</p>
+  <div class="code-block">
+    <div class="button">Show @mixin button($color)</div>
+    <pre>
+      <code>
+      @mixin button($color) {
+          @include clearfix;
+          background-color: $color;
+          border-bottom: .25em solid darken($color, 4);
+          border-radius: 3px;
+          color: $bodytext-black;
+          display: inline-block;
+          font-family: $base-sans-serif;
+          font-weight: 600;
+          letter-spacing: .05rem;
+          line-height: 1em;
+          margin: 0 0 .25em;
+          padding: .5em .75em .625em;
+          text-align: center;
+          vertical-align: middle;
+
+          &:active,
+          &:hover {
+              background-color: transparentize($color, .3);
+              border-bottom: .125em solid darken($color, 6);
+              margin-top: .125em;
+          }
+      }
+
+      .button {
+        @include button($tribune-yellow);
+      }
+      </code>
+    </pre>
+  </div>
+  <div class="button">$tribune-yellow</div>
+  <div class="teal-button">$tribune-teal</div>
+</article>

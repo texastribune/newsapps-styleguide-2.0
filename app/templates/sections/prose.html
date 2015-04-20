@@ -156,32 +156,120 @@
     </pre>
   </div>
 
-    <header id="explainer">
-      <h3 class="font-m">Explainer Text</h3>
-    </header>
-    <p class="explainer-text">Use .explainer-text when you're explaining something, such as how to use the Hospitals Explorer or to define a glossary definition. You can also @extend %explainer-text to another class.</p>
-    <div class="code-block">
-      <div class="button">Show HTML</div>
-      <pre>
-        <code>
-        &lt;p class="explainer-text"&gt;Text goes here&lt;/p&gt;
-        </code>
-      </pre>
-    </div>
-    <div class="code-block">
-      <div class="button">Show CSS</div>
-      <pre>
-        <code>
-          %explainer-text,
-          .explainer-text {
-            background: $explainer-gray;
-            color: $bodytext-black;
-            font-family: $base-sans-serif;
-            font-weight: 300;
-            line-height: 1.3;
-            padding: 1em;
-          }
-        </code>
-      </pre>
-    </div>
+  <header id="explainer">
+    <h3 class="font-m">Explainer Text</h3>
+  </header>
+  <p class="explainer-text">Use .explainer-text when you're explaining something, such as how to use the Hospitals Explorer or to define a glossary definition. You can also @extend %explainer-text to another class.</p>
+  <div class="code-block">
+    <div class="button">Show HTML</div>
+    <pre>
+      <code>
+      &lt;p class="explainer-text"&gt;Text goes here&lt;/p&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <div class="button">Show CSS</div>
+    <pre>
+      <code>
+        %explainer-text,
+        .explainer-text {
+          background: $explainer-gray;
+          color: $bodytext-black;
+          font-family: $base-sans-serif;
+          font-weight: 300;
+          line-height: 1.3;
+          padding: 1em;
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 id="block-text" class="font-m">Prose Blocks</h3>
+  </header>
+  <p>Add .prose-block around elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose.</p>
+  <!-- Lists -->
+  <div class="prose-block">
+    <h3 class="paragraph-header">Example list</h3>
+    <ul class="bullet">
+      <li>Lists are often used to call out important points.</li>
+      <li>They typically begin with an .paragraph-header.</li>
+      <li>Exciting stuff.</li>
+    </ul>
+  </div>
+  <div class="code-block">
+    <div class="button">Show List HTML</div>
+    <pre>
+      <code>
+      &lt;div class="prose-block"&gt;
+        &lt;h3 class="paragraph-header"&gt;Example list&lt;/h3&gt;
+        &lt;ul class="bullet"&gt;
+          &lt;li&gt;One&lt;/li&gt;
+          &lt;li&gt;Two&lt;/li&gt;
+          &lt;li&gt;Three&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <div class="button">Show .prose-block</div>
+    <pre>
+      <code>
+        .prose-block {
+          border-color: $tribune-yellow;
+          border-style: solid;
+          border-width: 1px 0;
+          margin-bottom: calc(16rem / $base);
+          position: relative;
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header id="block-quotes">
+    <h3 class="font-m">Block Quotes</h3>
+  </header>
+  <p>Use the class .block-quote for the text of a block quote, and .block-quote-source for the attribution. Also, make sure to use HTML special characters for your quote marks! They won't be styled correctly if you forget. **Warning: The example code below is converting the special characters, so make sure to change it if you copy/paste.**</p>
+
+  <div class="prose-block">
+    <h2 class="block-quote">&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;</h2>
+    <p class="block-quote-source">&mdash; Becca Aaronson, cat enthusiast</p>
+  </div>
+  <div class="code-block">
+    <div class="button">Show HTML</div>
+    <pre>
+      <code>
+      &lt;div class="block"&gt;
+        &lt;h2 class="block-quote"&gt;&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;&lt;/h2&gt;
+        &lt;p class="block-quote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
+      &lt;/div&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <div class="button">Show .block-quote .block-quote-source</div>
+    <pre>
+      <code>
+      .block-quote {
+        @extend %font-m;
+        font-family: $base-serif;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin: 1em .5em;
+        position: relative;
+        text-align: left;
+      }
+
+      .block-quote-source {
+        @extend %font-base;
+        font-family: $base-sans-serif;
+        font-weight: 300;
+        margin: 1em .5em;
+      }
+      </code>
+    </pre>
+  </div>
 </article>

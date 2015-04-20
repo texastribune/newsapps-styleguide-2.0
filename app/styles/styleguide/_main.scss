@@ -19,3 +19,8 @@
   text-align: center;
   width: 100%;
 }
+
+
+.teal-button {
+  @include button($tribune-teal);
+}
