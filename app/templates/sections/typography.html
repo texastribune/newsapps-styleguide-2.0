@@ -40,6 +40,14 @@
         }
       }
 
+      .sans {
+        font-family: $base-sans-serif;
+      }
+
+      .serif {
+        font-family: $base-serif;
+      }
+
       // These classes can be applied to any element
       // to set the font-size.
       %font-xxl,
@@ -88,8 +96,7 @@
   <p>This is a paragraph with a <a href="">fake link</a>.</p>
   <ul>
     <li>This is a regular list.</li>
-    <li>It's basically the same as a paragraph</li>
-    <li>Except sans-serif.</li>
+    <li>Of items.</li>
   </ul>
   <ul class="bullet">
     <li>This list has class .bullet</li>
@@ -121,7 +128,6 @@
       /* Base Theme for HTML elements */
 
       body {
-        @extend %font-base;
         background-color: $white;
         font-family: $base-sans-serif;
         -moz-osx-font-smoothing: grayscale;
@@ -155,8 +161,6 @@
       }
 
       ul {
-        @extend %font-base;
-        font-family: $base-sans-serif;
         list-style: none;
         padding: 0;
 
