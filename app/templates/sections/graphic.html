@@ -2,5 +2,89 @@
   <header>
     <h2 class="font-xl">Graphic Theme</h2>
   </header>
-  <p>Test</p>
+  <p>You can find specific styles for Tribune graphics in theme/_graphic.scss. To use these styles, wrap the class .graphic around your HTML.</p>
+
+  <div class="graphic">
+    <header>
+      <h1>Graphic headers have less font-weight.</h1>
+      <p class="subhead">You can also use a .subhead inside .graphic</p>
+    </header>
+    <p class="subtext">And .subtext for explainer text related to the graphic.</p>
+    <p class="footer">Source/Credit: Add .footer</p>
+  </div>
+
+  <div class="code-block">
+    <div class="button">Sample HTML</div>
+    <pre>
+      <code>
+        &lt;div class="graphic"&gt;
+          &lt;header class="graphic"&gt;
+            &lt;h1&gt;Graphic headers have less font-weight.&lt;/h1&gt;
+            &lt;p class="subhead"&gt;You can also use a .subhead inside .graphic&lt;/p&gt;
+          &lt;/header&gt;
+          &lt;p class="subtext"&gt;And .subtext for explainer text related to the graphic.&lt;/p&gt;
+          &lt;p class="footer"&gt;Source/Credit: Add .footer&lt;/p&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+  </div>
+
+  <div class="code-block">
+    <div class="button">Show Styles</div>
+    <pre>
+      <code>
+      .graphic {
+        @include clearfix;
+        line-height: 1.4;
+        margin: 0 0 1.875em;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-weight: 300;
+          margin: 0 0 .625em;
+        }
+
+        // For secondary header lines
+        // (typically applied to <p>)
+        .subhead {
+          @extend %font-base;
+          font-weight: 700;
+          margin: 0 0 .625em;
+        }
+
+        // Explanatory subtext
+        .subtext {
+          @extend %font-s;
+          color: lighten($bodytext-black, 25%);
+          font-family: $base-sans-serif;
+          margin: 0 0 .715em; // 10px
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+
+        .footer {
+          @include clearfix;
+          @extend %font-s;
+          background-color: $white;
+          color: lighten($bodytext-black, 45%);
+          margin: .5em 0;
+          text-align: left;
+
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+      }
+      </code>
+    </pre>
+  </div>
 </article>
