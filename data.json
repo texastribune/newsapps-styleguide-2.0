@@ -10,6 +10,14 @@
     {
       "name": "$tribune-teal",
       "rgb": "rgb(0, 137, 144)"
+    },
+    {
+      "name": "$dem-blue",
+      "rgb": "rgb(23, 117, 174)"
+    },
+    {
+      "name": "$rep-red",
+      "rgb": "rgb(214, 73, 70)"
     }
   ],
   "GRAPHIC_COLORS": [
