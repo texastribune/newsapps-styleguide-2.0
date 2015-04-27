@@ -1,3 +1,7 @@
+.row {
+  @include row();
+}
+
 .styleguide-header,
 .main {
 
@@ -12,6 +16,10 @@
 
 }
 
+.styleguide-header {
+  margin-top: 1em;
+}
+
 .newsapps-logo {
   @include clearfix;
   max-width: 10em;
@@ -23,4 +31,13 @@
 
 .teal-button {
   @include button($tribune-teal);
+}
+
+.button,
+.teal-button {
+  margin-bottom: 1em;
+}
+
+article {
+  margin-bottom: 1.5em;
 }

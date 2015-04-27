@@ -16,7 +16,18 @@
       </li>
     {% endfor %}
     </ul>
-
+    <header>
+      <h3 class="font-m">Party Colors</h3>
+    </header>
+    <ul>
+    {% for color in PARTY_COLORS %}
+      <li>
+        <div class="swatch" style="background-color: {{ color.rgb }}"></div>
+        <p class="font-s">{{ color.name }}</p>
+        <p class="font-s">{{ color.rgb }}</p>
+      </li>
+    {% endfor %}
+    </ul>
     <header>
       <h3 class="font-m">Shades of Gray</h3>
     </header>
