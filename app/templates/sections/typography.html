@@ -95,8 +95,9 @@
   <p>Headers, paragraphs, links and unordered lists are the only HTML elements with additional typography styles. The only style applied to &lt;h1&gt;-&lt;h6&gt; is "font-weight: 400," to normalize any bold settings that a browser may inadvertently apply. Also, because we often use unordered lists to create additional components, the base &lt;ul&gt; element does not include padding, margins or a list-style. For a bulleted list, include the class .bullet.</p>
   <p>This is a paragraph with a <a href="">fake link</a>.</p>
   <ul>
-    <li>This is a regular list.</li>
-    <li>Of items.</li>
+    <li>This is a regular list of items.</li>
+    <li>Styles have been normalized, so you can use it as a building block.</li>
+    <li>If you want pretty styles/margins/etc. use .bullet.</li>
   </ul>
   <ul class="bullet">
     <li>This list has class .bullet</li>
@@ -106,17 +107,14 @@
     <div class="button">Show HTML</div>
     <pre>
       <code>
-        &lt;p&gt;This is a paragraph. It's one of few elements that has styles
-        applied directly to the element class.
-        &lt;a href=""&gt;Links&lt;/a&gt; are automatically colored
-        $tribune-teal and have text-decoration removed.&lt;/p&gt;
+        &lt;p&gt;This is a paragraph with a &lt;a href=""&gt;fake link&lt;/a&gt;.&lt;/p&gt;
         &lt;ul&gt;
           &lt;li&gt;This is a regular list.&lt;/li&gt;
-          &lt;li&gt;Of items&lt;/li&gt;
+          &lt;li&gt;Styles have been normalized, so you can use it as a building block.&lt;/li&gt;
         &lt;/ul&gt;
-        &lt;ul class="disc"&gt;
-          &lt;li&gt;This list has class .disc&lt;/li&gt;
-          &lt;li&gt;Because its dotted.&lt;/li&gt;
+        &lt;ul class="bullet"&gt;
+          &lt;li&gt;This list has class .bullet&lt;/li&gt;
+          &lt;li&gt;Because we like our bullet points dotted.&lt;/li&gt;
         &lt;/ul&gt;
       </code>
     </pre>
