@@ -19,7 +19,7 @@
   </header>
   <p>Bourbon Neat's grid mixins add floats to HTML elements, so they'll sit in the grid properly. Sometimes, you'll need to clear these floats, so that your content doesn't accidentally overlap or line-up weird.</p>
   <div class="code-block">
-    <div class="button">Show @mixin clearfix</div>
+    <button class="button">Show @mixin clearfix</button>
     <pre>
       <code>
         @mixin clearfix {
@@ -41,7 +41,7 @@
   </header>
   <p>Occasionally you'll need to reset Bourbon Neat's count of elements, so that it will add @mixin omega() to the correct element. The @mixin omega-reset is adapted from Josh Fry's example, and you can find more info <a href="http://www.joshfry.me/blog/2013/05/13/omega-reset-for-bourbon-neat/">here</a>.</p>
   <div class="code-block">
-    <div class="button">Show @mixin omega-reset</div>
+    <button class="button">Show @mixin omega-reset</button>
     <pre>
       <code>
         @mixin omega-reset($nth) {
@@ -64,7 +64,7 @@
     <li>@mixin mobile-hide() &mdash; hide on mobile and default $small breakpoint, display on default $medium and $large breakpoints.</li>
   </ul>
   <div class="code-block">
-    <div class="button">Show Desktop/Mobile @mixins</div>
+    <button class="button">Show Desktop/Mobile @mixins</button>
     <pre>
       <code>
         // Mobile vs. Desktop Mixins
@@ -149,7 +149,7 @@
   </header>
   <p>We created the following mixins for layouts that we use in different ways across projects. For example, the @mixin features-layout creates a standard single column story layout with additional white space on larger views.</p>
   <div class="code-block">
-    <div class="button">Show @mixin features-layout</div>
+    <button class="button">Show @mixin features-layout</button>
     <pre>
       <code>
         // Features-Layout
@@ -167,7 +167,7 @@
   </div>
   <p>You can also create a grid using lists or divs. If your grid needs a a single breakpoint, use @mixin list-grid or @mixin div-grid, which allow you to define the $breakpoint, $total-column-width and $number-of-items in your grid.</p>
   <div class="code-block">
-    <div class="button">Show @mixin list-grid/div-grid</div>
+    <button class="button">Show @mixin list-grid/div-grid</button>
     <pre>
       <code>
         @mixin list-grid ($bp, $col-width, $number-li) {

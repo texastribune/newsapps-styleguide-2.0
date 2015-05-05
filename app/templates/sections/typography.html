@@ -16,28 +16,38 @@
   <h6 class="font-xs">This is a class .font-xs</h6>
 
   <p>The @mixin font-size() is called on the preset font-size variables on each of the .font-size classes, but it can be called on any class to set a particular module's font-size.</p>
-  <p>The @mixin font-size() takes three arguments &mdash; $font-size-number, $breakpoint and $percent. On the preset font-size classes and placeholders, we've added a $default-mobile breakpoint to reduce the relative font-size by 10%. It's used to change the font-size by a percentage at a certain breakpoint. For example, you could include the mixin to make paragraphs 88% percent smaller on screens 480 pixels or less. Change the size of your screen to preview how this mixin works.</p>
+  <p>The @mixin font-size() takes three arguments &mdash; $font-size-number, $pct and $bp. The $pct and $bp variables allow you to change the font-size by a percentage at a certain breakpoint &mdash; but you don't have to use these variables! We've included a default $pct of 1, and a default $bp, $default-mobile, in the @font-size mixin. The font-size extensions and classes (i.e. %font-m and .font-m, etc.), include a $pct of .9 to reduce the font-size by 10% on small screens (i.e. the $default-mobile breakpoint). Change the size of your screen to preview how this mixin works.</p>
   <div class="code-block">
-    <div class="button">Show Typography Code</div>
+    <button class="button">Show Typography Code</button>
     <pre>
       <code>
+      // Typography
+      // ==========
+
+      // Base Typography Variables
+      $base-sans-serif: $helvetica;
+      $base-serif: $georgia;
+
       // Font Sizes
       $base: 16;
-      $xxl: 48;
-      $xl: 36;
-      $l: 28;
-      $m: 22;
+      $xxl: 36;
+      $xl: 28;
+      $l: 22;
+      $m: 18;
       $s: 14;
       $xs: 12;
 
-      @mixin font-size($f, $bp, $pct) {
+      @mixin font-size($f, $pct:1, $bp:$default-mobile) {
         font-size: $f+px; // for IE8
         font-size: $f/$base+rem;
 
-        @include media($bp) {
-          font-size: $f*$pct+px; // for IE8
-          font-size: $f*$pct/$base+rem;
+        @if $pct != 1 {
+          @include media($bp) {
+            font-size: $f*$pct+px; // for IE8
+            font-size: $f*$pct/$base+rem;
+          }
         }
+
       }
 
       .sans {
@@ -52,38 +62,39 @@
       // to set the font-size.
       %font-xxl,
       .font-xxl {
-        @include font-size($xxl, $default-mobile, .9);
+        @include font-size($xxl, .9);
       }
 
       %font-xl,
       .font-xl {
-        @include font-size($xl, $default-mobile, .9);
+        @include font-size($xl, .9);
       }
 
       %font-l,
       .font-l {
-        @include font-size($l, $default-mobile, .9);
+        @include font-size($l, .9);
       }
 
       %font-m,
       .font-m {
-        @include font-size($m, $default-mobile, .9);
+        @include font-size($m, .9);
       }
 
       %font-base,
       .font-base {
-        @include font-size($base, $default-mobile, .9);
+        @include font-size($base, .9);
       }
 
       %font-s,
       .font-s {
-        @include font-size($s, $default-mobile, .9);
+        @include font-size($s, .9);
       }
 
       %font-xs,
       .font-xs {
-        @include font-size($xs, $default-mobile, .9);
+        @include font-size($xs, .9);
       }
+
       </code>
     </pre>
   </div>
@@ -104,7 +115,7 @@
     <li>Because we like our bullet points dotted.</li>
   </ul>
   <div class="code-block">
-    <div class="button">Show HTML</div>
+    <button class="button">Show HTML</button>
     <pre>
       <code>
         &lt;p&gt;This is a paragraph with a &lt;a href=""&gt;fake link&lt;/a&gt;.&lt;/p&gt;
@@ -120,7 +131,7 @@
     </pre>
   </div>
   <div class="code-block">
-    <div class="button">Show Base Styles</div>
+    <button class="button">Show Base Styles</button>
     <pre>
       <code>
       /* Base Theme for HTML elements */
