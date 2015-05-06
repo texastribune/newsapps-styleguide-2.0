@@ -9,6 +9,19 @@
 @import 'styleguide/swatches';
 
 
-table {
+table.responsive {
+  @include responsive-table();
+}
+
+table.inline {
+  @include responsive-table($mobile-header-type:inline-block);
+}
+
+table.show-first-th {
+  @include responsive-table($hide-first-th:false);
+}
+
+table.inline-show-first-th {
   @include responsive-table($hide-first-th:false, $mobile-header-type:inline-block);
 }
+// resdponsive-table($bp-table:$default-mobile, $hide-first-th:true, $mobile-header-type:inline-block, $mobile-header-width:30%)
