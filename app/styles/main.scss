@@ -7,3 +7,8 @@
 @import 'styleguide/main';
 @import 'styleguide/side-nav';
 @import 'styleguide/swatches';
+
+
+table {
+  @include responsive-table($hide-first-th:false, $mobile-header-type:inline-block);
+}

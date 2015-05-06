@@ -40,6 +40,10 @@
 
 article {
   margin-bottom: 1.5em;
+
+  &:first-child {
+    margin-top: 1.5em;
+  }
 }
 
 pre {

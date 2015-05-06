@@ -188,28 +188,29 @@
   <header>
     <h3 id="block-text" class="font-m">Prose Blocks</h3>
   </header>
-  <p>Add .prose-block around elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose.</p>
+  <p>Add .prose-block to elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose. In most cases, you'll put this type of content in an &lt;aside&gt;.</p>
+  <p>Note: To normalize &lt;aside&gt; and &lt;blockquote&gt; margins across browsers, we've included "margin: 0 0 1em" in helpers/_base.scss.</p>
   <!-- Lists -->
-  <div class="prose-block">
+  <aside class="prose-block">
     <h3 class="paragraph-header">Example list</h3>
     <ul class="bullet">
       <li>Lists are often used to call out important points.</li>
       <li>They typically begin with an .paragraph-header.</li>
       <li>Exciting stuff.</li>
     </ul>
-  </div>
+  </aside>
   <div class="code-block">
     <button class="button">Show List HTML</button>
     <pre>
       <code>
-      &lt;div class="prose-block"&gt;
+      &lt;aside class="prose-block"&gt;
         &lt;h3 class="paragraph-header"&gt;Example list&lt;/h3&gt;
         &lt;ul class="bullet"&gt;
           &lt;li&gt;One&lt;/li&gt;
           &lt;li&gt;Two&lt;/li&gt;
           &lt;li&gt;Three&lt;/li&gt;
         &lt;/ul&gt;
-      &lt;/div&gt;
+      &lt;/aside&gt;
       </code>
     </pre>
   </div>
@@ -231,20 +232,31 @@
   <header id="block-quotes">
     <h3 class="font-m">Block Quotes</h3>
   </header>
-  <p>Use the class .block-quote for the text of a block quote, and .block-quote-source for the attribution. Also, make sure to use HTML special characters for your quote marks! They won't be styled correctly if you forget. **Warning: The example code below is converting the special characters, so make sure to change it if you copy/paste.**</p>
-
-  <div class="prose-block">
-    <h2 class="block-quote">&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;</h2>
-    <p class="block-quote-source">&mdash; Becca Aaronson, cat enthusiast</p>
-  </div>
+  <p>Use a .blockquote for the text of a block quote, and .blockquote-source for the attribution. You can include the block quote in an &lt;aside&gt; or &lt;blockquote&gt; &mdash; whichever you prefer. We recommending using &lt;q&gt; for your quotes to ensure the browser applies curled double-quotations. If you use a &lt;p class="blockquote"&gt;, remember to include HTML ASCII characters for curled double quotations on either end of the text.</p>
+  <p>Below are two examples of block quotes. The first is an &lt;aside class="prose-block"&gt; with &lt;q class="blockquote"&gt;. The second is a &lt;blockquote class="prose-block"&gt; with &lt;p class="blockquote"&gt;:</p>
+  <aside class="prose-block">
+    <q class="blockquote">You know what&rsquo;s awesome? Cats. Cats are awesome.</q>
+    <p class="blockquote-source">&mdash; Becca Aaronson, cat enthusiast</p>
+  </aside>
+  <blockquote class="prose-block">
+    <p class="blockquote">&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;</p>
+    <p class="blockquote-source">&mdash; Becca Aaronson, cat enthusiast</p>
+  </blockquote>
   <div class="code-block">
     <button class="button">Show HTML</button>
     <pre>
       <code>
-      &lt;div class="prose-block"&gt;
-        &lt;h2 class="block-quote"&gt;&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;&lt;/h2&gt;
-        &lt;p class="block-quote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
-      &lt;/div&gt;
+      // Example 1
+      &lt;aside class="prose-block"&gt;
+        &lt;q class="blockquote"&gt;You know what&rsquo;s awesome? Cats. Cats are awesome.&lt;/q&gt;
+        &lt;p class="blockquote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
+      &lt;/aside&gt;
+
+      // Example 2
+      &lt;blockquote class="prose-block"&gt;
+        &lt;p class="blockquote"&gt;&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;&lt;/p&gt;
+        &lt;p class="blockquote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
+      &lt;/blockquote>
       </code>
     </pre>
   </div>
@@ -252,29 +264,30 @@
     <button class="button">Show .block-quote .block-quote-source</button>
     <pre>
       <code>
-      .block-quote {
+      .blockquote {
         @extend %font-m;
         font-family: $base-serif;
         font-style: italic;
         font-weight: 700;
-        line-height: 1.2em;
-        margin: 1em .5em;
+        line-height: 1.2;
         position: relative;
         text-align: left;
       }
 
-      .block-quote-source {
+      q.blockquote {
+        display: block;
+      }
+
+      .blockquote-source {
         @extend %font-base;
         font-family: $base-sans-serif;
         font-weight: 300;
-        margin: 1em .5em;
       }
       </code>
     </pre>
   </div>
-
   <header>
-    <div class="font-m">Select &amp; Input</div>
+    <h3 class="font-m">Select &amp; Input</h3>
   </header>
   <p>The classes .prose and .graphic include base styles for &lt;select&gt; and &lt;input&gt; fields. If you add these elements outside of .prose or .graphic, they will not have any styles applied.</p>
   <div class="prose">
