@@ -3,16 +3,18 @@
     <h2 class="font-xl">Tables</h2>
   </header>
   <p>The @mixin responsive-table() has a variety of options to help build the perfect responsive table for your needs. When the table converts to a mobile-view, you can either display the headers as blocks (default) or inline with the cell value (and change the width of the header). You can also choose to hide the first row header and convert the cell value to header styles (default) or show the header.</p>
+  <div class="explainer-text">
   <header>
     <h3 class="font-m">For optimal use, you may need to include the following attributes in your table HTML:</h3>
   </header>
-  <ul class="bullet">
-    <li>.highlight: Add to &lt;th&gt; or &lt;td&gt; to highlight a row or cell value</li>
-    <li>data-title="Header Name":  Add to &lt;td&gt; to designate the "Header Name" text that will appear on mobile views.</li>
-    <li>data-type="prose": Add to &lt;th&gt; or &lt;td&gt; to ensure text aligns left</li>
-    <li>data-type="number": Add to &lt;th&gt; or &lt;td&gt; to ensure numbers align right</li>
-  </ul>
 
+    <ul class="carat">
+      <li>.highlight: Add to &lt;th&gt; or &lt;td&gt; to highlight a row or cell value</li>
+      <li>data-title="Header Name":  Add to &lt;td&gt; to designate the "Header Name" text that will appear on mobile views.</li>
+      <li>data-type="prose": Add to &lt;th&gt; or &lt;td&gt; to ensure text aligns left</li>
+      <li>data-type="number": Add to &lt;th&gt; or &lt;td&gt; to ensure numbers align right</li>
+    </ul>
+  </div>
   <p>We've included four classes with the primary table settings, which you can preview below. Here's a more thorough description of the @mixin's variables and default settings:</p>
   <header>
     <h3 class="font-base"><span class="paragraph-header">$bp-table:</span> Breakpoint to switch to mobile styles</h3>
