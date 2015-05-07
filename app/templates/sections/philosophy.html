@@ -5,11 +5,12 @@
   <p>The goal of this style guide is to create a front-end framework to maintain consistency across News Apps projects, while giving each designer and developer the flexibility to code in their own unique and creative way.</p>
   <p>Our style files are written in <a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">SCSS</a> &mdash; a Sass syntax that builds on the existing CSS syntax. With SCSS, we can use all the great features of Sass, such as @mixins, %placeholders and $variables, but can write in the more familiar (and more expressive) CSS syntax.</p>
   <p>If you're unfamiliar with Sass or SCSS, read this <a href="http://sass-lang.com/guide">guide</a> to catch up on the basics.</p>
+  <p>Currently, our partial style files are broken into &mdash; helpers, theme, and components. You'll find a thorough description of the partials in the helpers folder below. If you're creating a feature with additional prose styles or making a graphic, you may also want to use those partials from the theme folder. And you'll find particular styles for components, like a masthead, and footer, in the components folder.</p>
   <section>
     <header>
-      <h3 class="font-l">The Helpers Folder</h3>
+      <h3 class="font-l">The Helpers</h3>
     </header>
-    <p>The helpers folder includes a series of partial style files to jump start any project. Here's a brief breakdown:</p>
+    <p>Everything you need to jump start a project is contained in the helpers folder. Here's an explanation of each of the partials:</p>
     <header>
       <h4 class="font-base paragraph-header">_base.scss</h4>
     </header>
@@ -17,19 +18,19 @@
     <header>
       <h4 class="font-base paragraph-header">_buttons.scss:</h4>
     </header>
-    <p>Pretty self explanatory. Jump to button section for a thorough explanation of how we've set up this partial.</p>
+    <p>In the works.</p>
     <header>
       <h4 class="font-base paragraph-header">_colors.scss:</h4>
     </header>
-    <p>All our colors are assigned to $variables, most of which have a description to help you decide which color to use. For example, $rep-red and $dem-blue are used for typical political party designations.</p>
+    <p>All of our colors are assigned to $variables, most of which have a descriptive name to help you decide when to use it. For example, $rep-red and $dem-blue are used for typical political party designations.</p>
     <header>
       <h4 class="font-base paragraph-header">_grid.scss:</h4>
     </header>
-    <p>Everything you need to build a responsive layout is included in the grid partial. Jump to <a href="#grid-specs">Grid Specs</a> to learn more about the basic structure, and <a href="#grid-mixins">Grid Mixins</a> to learn more about implement a grid system.</p>
+    <p>Everything you need to build a responsive layout is included in the grid partial. Jump to <a href="#grid-specs">Grid Specs</a> to learn more about the basic structure and default grid settings, and <a href="#grid-mixins">Grid Mixins</a> to learn more about the @mixins we've created to help you implement a grid design.</p>
     <header>
       <h4 class="font-base paragraph-header">_tables.scss:</h4>
     </header>
-    <p>This partial contains one mixin to rule them all &mdash; them being all the variables of mobile table styles. Skip to <a href="#tables">Tables</a> to learn more.</p>
+    <p>This partial contains one mixin to rule them all &mdash; i.e. all the variations of mobile table styles. Skip to <a href="#tables">Tables</a> to learn more.</p>
     <header>
       <h4 class="font-base paragraph-header">_typography.scss:</h4>
     </header>

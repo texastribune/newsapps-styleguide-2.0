@@ -4,7 +4,7 @@
   </header>
   <p>Typography styles can be found in helpers/_typography.scss. Georgia is our $base-serif font, and Helvetica Neue is our $base-sans-serif.</p>
   <header id="font-sizes">
-    <h3 class="font-m">Font-Sizes</h3>
+    <h3 class="font-l">Font-Sizes</h3>
   </header>
   <p>The $base font-size is 16px. In addition, there are six preset font-sizes assigned to the variables $xxl, $xl, $l, $m, $s, $xs. Those sizes correspond to the number of HTML header elements, but &lt;h1&gt;-&lt;h6&gt; do not have any assigned font-sizes. For flexibility, we've created a series of font-size classes that can be assigned to any element and %placeholders that can be extended to additional classes. For example, you may add the class .font-xxl to an &lt;h1&gt; element, @extend %font-xxl to all &lt;h1&gt; elements, or create a new class, .project-header with @extend %font-xxl.</p>
 
@@ -100,7 +100,7 @@
   </div>
 
   <header id="#base-elements">
-    <h3 class="font-m">Base elements</h3>
+    <h3 class="font-l">Base Element Styles</h3>
   </header>
   <p>The only place that base HTML elements should be given styles is in the helpers/_base.scss file. Few typography styles are assigned directly to HTML elements. All elements in the &lt;body&gt; will be in $base-sans-serif, font-size 16px, and line-height: 1 &mdash; unless otherwise specified.</p>
   <p>Headers, paragraphs, links and unordered lists are the only HTML elements with additional typography styles. The only style applied to &lt;h1&gt;-&lt;h6&gt; is "font-weight: 400," to normalize any bold settings that a browser may inadvertently apply. Also, because we often use unordered lists to create additional components, the base &lt;ul&gt; element does not include padding, margins or a list-style. For a bulleted list, include the class .bullet.</p>
@@ -114,6 +114,10 @@
     <li>This list has class .bullet</li>
     <li>Because we like our bullet points dotted.</li>
   </ul>
+  <ul class="carat">
+    <li>This list has class .carat</li>
+    <li>Because we like our bullet points tasty (like carrots? Bad joke.)</li>
+  </ul>
   <div class="code-block">
     <button class="button">Show HTML</button>
     <pre>
@@ -126,6 +130,10 @@
         &lt;ul class="bullet"&gt;
           &lt;li&gt;This list has class .bullet&lt;/li&gt;
           &lt;li&gt;Because we like our bullet points dotted.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="carat"&gt;
+          &lt;li&gt;This list has class .carat&lt;/li&gt;
+          &lt;li&gt;Because we like our bullet points tasty (like carrots? Bad joke.)&lt;/li&gt;
         &lt;/ul&gt;
       </code>
     </pre>
