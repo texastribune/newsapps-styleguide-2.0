@@ -9,7 +9,7 @@ $bp-guide: new-breakpoint(min-width 600px);
   @include clearfix;
 
   ul {
-    margin: 0;
+    margin: 0 0 1.5em;
   }
 
   li {

@@ -21,6 +21,7 @@
   <div class="row">
     <section id="side-nav" class="side-nav">
       <ul>
+        <li><a href="#philosophy">Basic Principles</a></li>
         <li><a href="#colors">Colors</a></li>
         <li><a href="#grid-specs">Grid Specs</a></li>
         <li><a href="#grid-mixins">Grid Mixins</a></li>
@@ -32,6 +33,7 @@
       </ul>
     </section>
     <section class="main content-block">
+      {% include "templates/sections/philosophy.html" %}
       {% include "templates/sections/colors.html" %}
       {% include "templates/sections/grid-specs.html" %}
       {% include "templates/sections/grid-mixins.html" %}
@@ -44,7 +46,28 @@
     </section>
   </div>
 </div>
-
+<footer class="footer">
+  <div class="container">
+    <div class="content-block">
+    <nav class="first-nav">
+      <ul>
+        <li>&copy; 2015 <a href="http://www.texastribune.org/">The Texas Tribune</a></li>
+      </ul>
+    </nav>
+    <nav class="last-nav">
+      <ul>
+        <li><a href="http://www.texastribune.org/about/">About Us</a></li>
+        <li><a href="http://www.texastribune.org/contact/">Contact Us</a></li>
+        <li><a href="http://www.texastribune.org/support-us/donors-and-members/">Who Funds Us?</a></li>
+        <li><a href="http://www.texastribune.org/terms-of-service/">Terms of Service</a></li>
+        <li><a href="http://www.texastribune.org/ethics/">Code of Ethics</a></li>
+        <li><a href="http://www.texastribune.org/privacy/">Privacy Policy</a></li>
+        <li class="donor-item"><a href="https://www.texastribune.org/join/">Donate</a></li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</footer>
 {% endblock %}
 
 {% block script %}

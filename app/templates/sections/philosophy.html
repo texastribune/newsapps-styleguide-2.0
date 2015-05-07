@@ -1,0 +1,38 @@
+<article id="philosophy">
+  <header>
+    <h2 class="font-xl">Basic Principles</h2>
+  </header>
+  <p>The goal of this style guide is to create a front-end framework to maintain consistency across News Apps projects, while giving each designer and developer the flexibility to code in their own unique and creative way.</p>
+  <p>Our style files are written in <a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">SCSS</a> &mdash; a Sass syntax that builds on the existing CSS syntax. With SCSS, we can use all the great features of Sass, such as @mixins, %placeholders and $variables, but can write in the more familiar (and more expressive) CSS syntax.</p>
+  <p>If you're unfamiliar with Sass or SCSS, read this <a href="http://sass-lang.com/guide">guide</a> to catch up on the basics.</p>
+  <section>
+    <header>
+      <h3 class="font-l">The Helpers Folder</h3>
+    </header>
+    <p>The helpers folder includes a series of partial style files to jump start any project. Here's a brief breakdown:</p>
+    <header>
+      <h4 class="font-base paragraph-header">_base.scss</h4>
+    </header>
+    <p>These are the only styles applied directly to HTML elements. If you really need a clean slate, don't use this partial. But it's helpful for normalizing styles and inheriting basic news apps prose styles without using additional classes.</p>
+    <header>
+      <h4 class="font-base paragraph-header">_buttons.scss:</h4>
+    </header>
+    <p>Pretty self explanatory. Jump to button section for a thorough explanation of how we've set up this partial.</p>
+    <header>
+      <h4 class="font-base paragraph-header">_colors.scss:</h4>
+    </header>
+    <p>All our colors are assigned to $variables, most of which have a description to help you decide which color to use. For example, $rep-red and $dem-blue are used for typical political party designations.</p>
+    <header>
+      <h4 class="font-base paragraph-header">_grid.scss:</h4>
+    </header>
+    <p>Everything you need to build a responsive layout is included in the grid partial. Jump to <a href="#grid-specs">Grid Specs</a> to learn more about the basic structure, and <a href="#grid-mixins">Grid Mixins</a> to learn more about implement a grid system.</p>
+    <header>
+      <h4 class="font-base paragraph-header">_tables.scss:</h4>
+    </header>
+    <p>This partial contains one mixin to rule them all &mdash; them being all the variables of mobile table styles. Skip to <a href="#tables">Tables</a> to learn more.</p>
+    <header>
+      <h4 class="font-base paragraph-header">_typography.scss:</h4>
+    </header>
+    <p>Our style guide has a modular typography system. By changing the size $variables, you can change font-sizes across the entire project. The system also allows you to designate font-size with .classes in your HTML or @extend %font-sizes on new classes.</p>
+  </section>
+</article>

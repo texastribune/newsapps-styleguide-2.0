@@ -22,7 +22,7 @@
 
 .newsapps-logo {
   @include clearfix;
-  max-width: 10em;
+  max-width: 7em;
   padding: 1em;
   text-align: center;
   width: 100%;
@@ -39,16 +39,11 @@
 }
 
 article {
-  margin-bottom: 1.5em;
+  border-bottom: 1px solid $tribune-yellow;
+  margin-bottom: 2em;
 
-  &:first-child {
-    margin-top: 1.5em;
-  }
-}
-
-.code-block {
-  pre {
-    display: none;
+  &:last-child {
+    border-bottom: 0;
   }
 }
 
