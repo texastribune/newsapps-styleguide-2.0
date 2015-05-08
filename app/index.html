@@ -5,23 +5,20 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container">
-  <div class="row">
-    <section class="logo">
-      <img class="newsapps-logo" src="assets/images/news_apps_logo.png"></img>
-    </section>
-    <section class="styleguide-header">
-      <header class="content-block">
-        <h1 class="font-xxl">Style Guide</h1>
-        <p>Welcome to the Texas Tribune News Apps Style Guide &mdash; a constant work-in-progress.</p>
-      </header>
-      <hr class="yellow">
-    </section>
-  </div>
-  <div class="row">
+  <section id="styleguide-header" class="styleguide-header">
+    <figure class="newsapps-logo">
+      <img src="assets/images/news_apps_logo.png"></img>
+    </figure>
+    <header>
+      <h1 class="font-xxl">Style Guide</h1>
+    </header>
+    <button id="menu" class="menu-btn">&#9776; Menu</button>
+  </section>
+  <div class="row-wrapper">
     <section id="side-nav" class="side-nav">
       <ul>
-        <li><a href="#philosophy">Basic Principles</a></li>
         <li><a href="#colors">Colors</a></li>
         <li><a href="#grid-specs">Grid Specs</a></li>
         <li><a href="#grid-mixins">Grid Mixins</a></li>

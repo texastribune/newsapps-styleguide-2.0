@@ -1,11 +1,25 @@
-$bp-guide: new-breakpoint(min-width 600px);
+.menu-btn {
+  background-color: $white;
+  border: 0;
+  text-align: left;
+  padding-bottom: 1em;
+  width: 100%;
 
-.logo,
-.side-nav {
-  @include media($default-desktop) {
-    @include span-columns(3);
+  @include media($bp-guide) {
+    display: none;
   }
 
+}
+
+#side-nav {
+  display: none;
+
+  @include media($bp-guide) {
+    display: block;
+  }
+}
+
+.side-nav {
   @include clearfix;
 
   ul {
@@ -29,6 +43,11 @@ $bp-guide: new-breakpoint(min-width 600px);
       padding-left: .25em;
 
     }
+
+  }
+
+  @include media($bp-guide) {
+    @include span-columns(2);
   }
 
 }

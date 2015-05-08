@@ -1,42 +1,6 @@
-.row {
-  @include row();
-}
-
-.styleguide-header,
-.main {
-
-  @include media($default-desktop) {
-    @include span-columns(9);
-    @include omega();
-  }
-
-  article {
-    @include clearfix;
-  }
-
-}
-
-.styleguide-header {
-  margin-top: 1em;
-}
-
-.newsapps-logo {
-  @include clearfix;
-  max-width: 7em;
-  padding: 1em;
-  text-align: center;
-  width: 100%;
-}
-
-
-.teal-button {
-  @include button($tribune-teal);
-}
-
-.button,
-.teal-button {
-  margin-bottom: 1em;
-}
+$bp-guide: new-breakpoint(min-width 850px);
+$bp-guide-header: new-breakpoint(min-width 600px);
+$bp-guide-header-mobile: new-breakpoint(max-width 600px);
 
 article {
   border-bottom: 1px solid $tribune-yellow;
@@ -47,3 +11,68 @@ article {
   }
 }
 
+.main {
+  @include media($bp-guide) {
+    @include span-columns(10);
+    @include omega();
+  }
+
+  article {
+    @include clearfix;
+  }
+
+}
+
+.menu-btn {
+  background-color: $white;
+  border: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.newsapps-logo {
+  @include span-columns(3);
+  @include omega();
+  @include clearfix;
+  display: inline-block;
+  margin: 0 1em 1.5em 0;
+  max-width: 5em;
+  text-align: center;
+  width: 100%;
+}
+
+.row-wrapper {
+  @include row();
+}
+
+.styleguide-header {
+  @extend %content-block;
+  @include clearfix;
+  border-bottom: 2px solid $tribune-yellow;
+  margin: 1em 0;
+  text-align: left;
+
+  header {
+    text-align: left;
+    vertical-align: top;
+  }
+
+  h1 {
+    @include font-size(80, $pct:.9, $bp:$bp-guide-header-mobile);
+    font-family: league-gothic;
+    margin-bottom: .25em;
+  }
+
+  // @include media($bp-guide-header) {
+  //   @include shift(3);
+  // }
+}
+
+.button,
+.teal-button {
+  margin-bottom: 1em;
+}
+
+.teal-button {
+  @include button($tribune-teal);
+}
