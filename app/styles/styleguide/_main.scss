@@ -56,8 +56,7 @@ article {
 
   h1 {
     @include font-size(80, $pct:.9, $bp:$bp-guide-header-mobile);
-    font-family: $base-sans-serif;
-    font-family: league-gothic;
+    font-family: league-gothic, $base-sans-serif;
     margin-bottom: .25em;
   }
 
