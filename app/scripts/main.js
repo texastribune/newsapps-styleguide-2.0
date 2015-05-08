@@ -16,5 +16,5 @@ $(window).resize(function() {
     $('#side-nav').css({display: 'block'});
   } else {
     $('#side-nav').css({display: 'none'});
-  };
+  }
 });
