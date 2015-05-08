@@ -23,6 +23,15 @@ article {
 
 }
 
+.fix {
+  position: fixed;
+  top: 0;
+}
+
+.shift {
+  @include shift(2);
+}
+
 .newsapps-logo {
   @include span-columns(3);
   @include omega();
@@ -30,16 +39,24 @@ article {
   display: inline-block;
   margin: 0 1em 1em 0;
   max-width: 4.7em;
-  text-align: center;
+  text-align: left;
   width: 100%;
 
   @include media($bp-guide-header) {
+    @include shift(2);
     max-width: 5.5em;
   }
 }
 
+// .newsapps-menu-fixed {
+//   @include media($bp-guide-header) {
+//     @include shift(2);
+//   }
+// }
+
 .row-wrapper {
   @include row();
+
 }
 
 .styleguide-header {
@@ -59,10 +76,6 @@ article {
     font-family: league-gothic, $base-sans-serif;
     margin-bottom: .25em;
   }
-
-  // @include media($bp-guide-header) {
-  //   @include shift(3);
-  // }
 }
 
 .button,

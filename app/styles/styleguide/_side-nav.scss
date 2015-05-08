@@ -14,10 +14,6 @@
 
 #side-nav {
   display: none;
-
-  @include media($bp-guide) {
-    display: block;
-  }
 }
 
 .side-nav {
@@ -49,6 +45,7 @@
 
   @include media($bp-guide) {
     @include span-columns(2);
+    display: block;
   }
 
 }

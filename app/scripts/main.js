@@ -1,5 +1,30 @@
 'use strict';
 
+var menuStyles = function() {
+
+  var headHeight = $('.row-wrapper').offset().top;
+  var scrollPos = $(window).scrollTop();
+
+  if ($(window).width() > 850) {
+    $('#side-nav').css({display: 'block'});
+
+    if (scrollPos >= 0 && scrollPos < headHeight) {
+      $('#side-nav').css({top: (headHeight - scrollPos)});
+    } else {
+      $('#side-nav').addClass('fix');
+      $('.newsapps-logo').addClass('shift');
+      $('.main').addClass('shift');
+    }
+
+  } else {
+      $('#side-nav').removeClass('fix');
+      $('#side-nav').css({display: 'none'});
+      $('.newsapps-logo').removeClass('shift');
+      $('.main').removeClass('shift');
+  }
+
+};
+
 $(document).ready(function(){
   // Hide-Show code blocks
   $('.code-block > .button').click(function(){
@@ -9,12 +34,14 @@ $(document).ready(function(){
   $('#menu').click(function() {
     $('#side-nav').toggle();
   });
+
+  menuStyles();
 });
 
 $(window).resize(function() {
-  if ($(window).width() > 850) {
-    $('#side-nav').css({display: 'block'});
-  } else {
-    $('#side-nav').css({display: 'none'});
-  }
+  menuStyles();
+});
+
+$(window).scroll(function () {
+  menuStyles();
 });
