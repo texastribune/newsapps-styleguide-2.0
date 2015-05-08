@@ -23,13 +23,6 @@ article {
 
 }
 
-.menu-btn {
-  background-color: $white;
-  border: 0;
-  text-align: left;
-  width: 100%;
-}
-
 .newsapps-logo {
   @include span-columns(3);
   @include omega();
