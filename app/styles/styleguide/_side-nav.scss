@@ -1,12 +1,25 @@
+.menu-btn {
+  background-color: $white;
+  border: 0;
+  text-align: left;
+  padding-bottom: 1em;
+  width: 100%;
+
+  @include media($bp-guide) {
+    display: none;
+  }
+
+}
+
 #side-nav {
-  position: relative;
+  display: none;
+
+  @include media($bp-guide) {
+    display: block;
+  }
 }
 
 .side-nav {
-  @include media($bp-guide) {
-    @include span-columns(3);
-  }
-
   @include clearfix;
 
   ul {
@@ -30,6 +43,11 @@
       padding-left: .25em;
 
     }
+
+  }
+
+  @include media($bp-guide) {
+    @include span-columns(2);
   }
 
 }
