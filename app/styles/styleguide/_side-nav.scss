@@ -1,8 +1,9 @@
-$bp-guide: new-breakpoint(min-width 600px);
+#side-nav {
+  position: relative;
+}
 
-.logo,
 .side-nav {
-  @include media($default-desktop) {
+  @include media($bp-guide) {
     @include span-columns(3);
   }
 

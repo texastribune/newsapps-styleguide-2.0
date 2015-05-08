@@ -1,11 +1,10 @@
-.row {
-  @include row();
-}
+$bp-guide: new-breakpoint(min-width 400px);
+$bp-guide-header: new-breakpoint(min-width 600px);
+$bp-guide-header-mobile: new-breakpoint(max-width 600px);
 
-.styleguide-header,
 .main {
-
-  @include media($default-desktop) {
+  @include media($bp-guide) {
+    @include shift(3);
     @include span-columns(9);
     @include omega();
   }
@@ -17,17 +16,38 @@
 }
 
 .styleguide-header {
-  margin-top: 1em;
+  @extend %content-block;
+  @include clearfix;
+  border-bottom: 2px solid $tribune-yellow;
+  margin: 1em 0;
+  text-align: left;
+
+  header {
+    text-align: left;
+    vertical-align: top;
+  }
+
+  h1 {
+    @include font-size(80, $pct:.9, $bp:$bp-guide-header-mobile);
+    font-family: league-gothic;
+    margin-bottom: .25em;
+  }
+
+  @include media($bp-guide-header) {
+    @include shift(3);
+  }
 }
 
 .newsapps-logo {
+  @include span-columns(3);
+  @include omega();
   @include clearfix;
-  max-width: 7em;
-  padding: 1em;
+  display: inline-block;
+  margin: 0 1em 1.5em 0;
+  max-width: 5em;
   text-align: center;
   width: 100%;
 }
-
 
 .teal-button {
   @include button($tribune-teal);
@@ -46,4 +66,3 @@ article {
     border-bottom: 0;
   }
 }
-
