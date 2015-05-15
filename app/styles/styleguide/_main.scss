@@ -78,11 +78,12 @@ article {
   }
 }
 
-.button,
-.teal-button {
-  margin-bottom: 1em;
-}
-
 .teal-button {
   @include button($tribune-teal);
+}
+
+.button,
+.teal-button,
+.ghost-button {
+  margin-bottom: 1em;
 }
