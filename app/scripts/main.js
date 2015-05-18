@@ -8,7 +8,7 @@ var menuStyles = function() {
   if ($(window).width() > 850) {
     $('#side-nav').css({display: 'block'});
 
-    if (scrollPos >= 0 && scrollPos < headHeight) {
+    if ($(window).height() !== 0 && scrollPos >= 0 && scrollPos < headHeight) {
       $('#side-nav').css({top: (headHeight - scrollPos)});
     } else {
       $('#side-nav').addClass('fix');
