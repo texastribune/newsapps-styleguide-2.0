@@ -2,41 +2,63 @@
   <header>
     <h3 class="font-l">Buttons</h3>
   </header>
-  <p>Add the @mixin button($color) to create any color button with the basic button styles. Button styles are not applied to the &lt;button&gt; tag directly. For standard buttons, use .button, which has @mixin button($tribune-yellow) included. </p>
+  <p>Add the @mixin button($color) to create any color button with the basic button styles. Button styles are not applied to the &lt;button&gt; tag directly. For standard buttons, use .button, which has @mixin button($tribune-yellow) included. For a ghost button, add the argument 'ghost':  @mixin button($color, ghost). The class .ghost-button will include a teal ghost button.</p>
   <div class="code-block">
     <button class="button">Show @mixin button($color)</button>
     <pre>
       <code>
-      @mixin button($color) {
-          @include clearfix;
-          background-color: $color;
-          border-bottom: .25em solid darken($color, 4);
-          border-radius: 3px;
-          color: $bodytext-black;
-          display: inline-block;
-          font-family: $base-sans-serif;
-          font-weight: 600;
-          letter-spacing: .05rem;
-          line-height: 1em;
-          margin: 0 0 .25em;
-          padding: .5em .75em .625em;
-          text-align: center;
-          vertical-align: middle;
+        @mixin button($color, $type: null) {
+            @include clearfix;
+            cursor: pointer;
+            display: inline-block;
+            font-family: $base-sans-serif;
+            letter-spacing: .03rem;
+            margin: 0 0 0.3em;
+            text-align: center;
+            vertical-align: middle;
 
-          &:active,
-          &:hover {
-              background-color: transparentize($color, .3);
-              border-bottom: .125em solid darken($color, 6);
-              margin-top: .125em;
-          }
-      }
+            @if $type == ghost {
+                background: transparent;
+                border: 2px solid $color;
+                color: $color;
+                text-transform: uppercase;
+                padding: 0.5em 0.75em;
 
-      .button {
-        @include button($tribune-yellow);
-      }
+            } @else {
+                background: $color;
+
+                @if $color == $teal {
+                    color: $white;
+
+                } @else {
+                    color: $bodytext-black;
+                }
+                border: 0px;
+                padding: .5em .75em .625em;
+            }
+
+            &:active,
+            &:hover {
+                @if $type == ghost {
+                    background-color: transparentize($color, 0.95);
+
+                } @else {
+                    background-color: transparentize($color, .3);
+                }
+            }
+        }
+
+        .button {
+            @include button($tribune-yellow);
+        }
+
+        .ghost-button {
+            @include button($teal, ghost);
+        }
       </code>
     </pre>
   </div>
-  <button class="button">$tribune-yellow</button>
-  <button class="teal-button">$tribune-teal</button>
+  <button class="button">.button</button>
+  <button class="teal-button">.button-teal</button>
+  <button class="ghost-button">.ghost-button
 </article>
