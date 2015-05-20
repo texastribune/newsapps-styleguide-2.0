@@ -11,13 +11,13 @@ var menuStyles = function() {
     if (scrollPos >= 0 && scrollPos < headHeight) {
       $('#side-nav').css({top: (headHeight - scrollPos)});
     } else {
-      $('#side-nav').addClass('fix');
+      $('#side-nav').css({top: '0px'}).addClass('fix');
       $('.newsapps-logo').addClass('shift');
       $('.main').addClass('shift');
     }
 
   } else {
-      $('#side-nav').removeClass('fix');
+      $('#side-nav').removeAttr('top').removeClass('fix');
       $('#side-nav').css({display: 'none'});
       $('.newsapps-logo').removeClass('shift');
       $('.main').removeClass('shift');
