@@ -44,7 +44,8 @@
   }
 
   @include media($bp-guide) {
-    @include span-columns(2);
+    float: left;
+    // @include span-columns(2);
     display: block;
   }
 

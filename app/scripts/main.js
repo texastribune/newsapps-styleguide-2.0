@@ -8,9 +8,7 @@ var menuStyles = function() {
   if ($(window).width() > 850) {
     $('#side-nav').css({display: 'block'});
 
-    if ($(window).height() !== 0 && scrollPos >= 0 && scrollPos < headHeight) {
-      $('#side-nav').css({top: (headHeight - scrollPos)});
-    } else {
+    if ($(window).height() > headHeight) {
       $('#side-nav').addClass('fix');
       $('.newsapps-logo').addClass('shift');
       $('.main').addClass('shift');
