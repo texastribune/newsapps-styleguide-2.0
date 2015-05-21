@@ -3,7 +3,6 @@
 var menuStyles = function() {
 
   var headHeight = $('.row-wrapper').offset().top;
-  var scrollPos = $(window).scrollTop();
 
   if ($(window).width() > 850) {
     $('#side-nav').css({display: 'block'});
