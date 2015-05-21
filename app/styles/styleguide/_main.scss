@@ -76,6 +76,10 @@ article {
   }
 }
 
+.teal-button {
+  @include button($teal);
+}
+
 .button,
 .teal-button,
 .ghost-button {
