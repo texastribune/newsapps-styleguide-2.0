@@ -15,7 +15,7 @@ var menuStyles = function() {
     }
 
   } else {
-      $('#side-nav').removeClass('fix');
+      $('#side-nav').removeAttr('top').removeClass('fix');
       $('#side-nav').css({display: 'none'});
       $('.newsapps-logo').removeClass('shift');
       $('.main').removeClass('shift');

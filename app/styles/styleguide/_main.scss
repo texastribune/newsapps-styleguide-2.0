@@ -25,7 +25,6 @@ article {
 
 .fix {
   position: fixed;
-  top: 0;
 }
 
 .shift {
@@ -76,8 +75,10 @@ article {
   }
 }
 
-.teal-button {
-  @include button($tribune-teal);
+.button,
+.teal-button,
+.ghost-button {
+  margin-bottom: 1em;
 }
 
 .button,

@@ -10,8 +10,8 @@
     <ul class="carat">
       <li>.highlight: Add to &lt;th&gt; or &lt;td&gt; to highlight a row or cell value</li>
       <li>data-title="Header Name":  Add to &lt;td&gt; to designate the "Header Name" text that will appear on mobile views.</li>
-      <li>data-type="prose": Add to &lt;th&gt; or &lt;td&gt; to ensure text aligns left</li>
-      <li>data-type="number": Add to &lt;th&gt; or &lt;td&gt; to ensure numbers align right</li>
+      <li>class="table-prose": Add to &lt;th&gt; or &lt;td&gt; to ensure text aligns left</li>
+      <li>class="table-number": Add to &lt;th&gt; or &lt;td&gt; to ensure numbers align right</li>
     </ul>
   </div>
   <p>We've included four classes with the primary table settings, which you can preview below. Here's a more thorough description of the @mixin's variables and default settings:</p>
@@ -47,7 +47,7 @@
   </div>
   <article class="table-example">
     <header>
-      <h3 class="font-l">.reponsive</h3>
+      <h3 class="font-l">.responsive</h3>
     </header>
     <table class="responsive">
       <thead>
@@ -55,8 +55,8 @@
           <th>First child</th>
           <th>Default</th>
           <th>Default</th>
-          <th data-type="prose">Prose</th>
-          <th data-type="number">Number</th>
+          <th class="table-prose">Prose</th>
+          <th class="table-number">Number</th>
           <th>Last Child</th>
         </tr>
       </thead>
@@ -65,24 +65,24 @@
           <td data-title="Header 1">Apple</td>
           <td data-title="Header 2">Banana</td>
           <td data-title="What if a header title is really, really long?">Pineapple</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">4,00,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">4,000,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Rock</td>
           <td data-title="Header 2">Paper</td>
           <td>Scissors</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
-          <td data-title="Number" data-type="number">$2,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
+          <td class="table-number" data-title="Number">$2,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr class="highlight">
           <td data-title="Header 1">Blue</td>
           <td data-title="Header 2">Red</td>
           <td>Green</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">14</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">14</td>
           <td data-title="Last child">End</td>
         </tr>
       </tbody>
@@ -97,8 +97,8 @@
                 &lt;th&gt;First child&lt;/th&gt;
                 &lt;th&gt;Default&lt;/th&gt;
                 &lt;th&gt;Default&lt;/th&gt;
-                &lt;th data-type="prose"&gt;Prose&lt;/th&gt;
-                &lt;th data-type="number"&gt;Number&lt;/th&gt;
+                &lt;th class="table-prose"&gt;Prose&lt;/th&gt;
+                &lt;th class="table-number"&gt;Number&lt;/th&gt;
                 &lt;th&gt;Last Child&lt;/th&gt;
               &lt;/tr&gt;
             &lt;/thead&gt;
@@ -107,24 +107,24 @@
                 &lt;td data-title="Header 1"&gt;Apple&lt;/td&gt;
                 &lt;td data-title="Header 2"&gt;Banana&lt;/td&gt;
                 &lt;td data-title="What if a header title is really, really long?"&gt;Pineapple&lt;/td&gt;
-                &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-                &lt;td data-title="Number" data-type="number"&gt;4,00,000&lt;/td&gt;
+                &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+                &lt;td class="table-number" data-title="Number"&gt;4,000,000&lt;/td&gt;
                 &lt;td data-title="Last child"&gt;End&lt;/td&gt;
               &lt;/tr&gt;
               &lt;tr&gt;
                 &lt;td data-title="Header 1"&gt;Rock&lt;/td&gt;
                 &lt;td data-title="Header 2"&gt;Paper&lt;/td&gt;
                 &lt;td&gt;Scissors&lt;/td&gt;
-                &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
-                &lt;td data-title="Number" data-type="number"&gt;$2,000&lt;/td&gt;
+                &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
+                &lt;td class="table-number" data-title="Number"&gt;$2,000&lt;/td&gt;
                 &lt;td data-title="Last child"&gt;End&lt;/td&gt;
               &lt;/tr&gt;
               &lt;tr class="highlight"&gt;
                 &lt;td data-title="Header 1"&gt;Blue&lt;/td&gt;
                 &lt;td data-title="Header 2"&gt;Red&lt;/td&gt;
                 &lt;td&gt;Green&lt;/td&gt;
-                &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-                &lt;td data-title="Number" data-type="number"&gt;14&lt;/td&gt;
+                &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+                &lt;td class="table-number" data-title="Number"&gt;14&lt;/td&gt;
                 &lt;td data-title="Last child"&gt;End&lt;/td&gt;
               &lt;/tr&gt;
             &lt;/tbody&gt;
@@ -155,8 +155,8 @@
           <th>First child</th>
           <th>Default</th>
           <th>Default</th>
-          <th data-type="prose">Prose</th>
-          <th data-type="number">Number</th>
+          <th class="table-prose">Prose</th>
+          <th class="table-number">Number</th>
           <th>Last Child</th>
         </tr>
       </thead>
@@ -165,24 +165,24 @@
           <td data-title="Header 1">Apple</td>
           <td data-title="Header 2">Banana</td>
           <td data-title="What if a header title is really, really long?">Pineapple</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">4,00,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">4,000,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Rock</td>
           <td data-title="Header 2">Paper</td>
           <td data-title="Header 3">Scissors</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
-          <td data-title="Number" data-type="number">$2,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
+          <td class="table-number" data-title="Number">$2,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Blue</td>
           <td data-title="Header 2">Red</td>
           <td data-title="Header 3">Green</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">14</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">14</td>
           <td data-title="Last child">End</td>
         </tr>
       </tbody>
@@ -197,8 +197,8 @@
               &lt;th&gt;First child&lt;/th&gt;
               &lt;th&gt;Default&lt;/th&gt;
               &lt;th&gt;Default&lt;/th&gt;
-              &lt;th data-type="prose"&gt;Prose&lt;/th&gt;
-              &lt;th data-type="number"&gt;Number&lt;/th&gt;
+              &lt;th class="table-prose"&gt;Prose&lt;/th&gt;
+              &lt;th class="table-number"&gt;Number&lt;/th&gt;
               &lt;th&gt;Last Child&lt;/th&gt;
             &lt;/tr&gt;
           &lt;/thead&gt;
@@ -207,24 +207,24 @@
               &lt;td data-title="Header 1"&gt;Apple&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Banana&lt;/td&gt;
               &lt;td data-title="What if a header title is really, really long?"&gt;Pineapple&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;4,00,000&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;4,000,000&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
             &lt;tr&gt;
               &lt;td data-title="Header 1"&gt;Rock&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Paper&lt;/td&gt;
               &lt;td data-title="Header 3"&gt;Scissors&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;$2,000&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;$2,000&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
             &lt;tr&gt;
               &lt;td data-title="Header 1"&gt;Blue&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Red&lt;/td&gt;
               &lt;td data-title="Header 3"&gt;Green&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;14&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;14&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
           &lt;/tbody&gt;
@@ -255,8 +255,8 @@
           <th>First child</th>
           <th>Default</th>
           <th>Default</th>
-          <th data-type="prose">Prose</th>
-          <th data-type="number">Number</th>
+          <th class="table-prose">Prose</th>
+          <th class="table-number">Number</th>
           <th>Last Child</th>
         </tr>
       </thead>
@@ -265,24 +265,24 @@
           <td data-title="Header 1">Apple</td>
           <td data-title="Header 2">Banana</td>
           <td data-title="What if a header title is really, really long?">Pineapple</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">4,00,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">4,000,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Rock</td>
           <td data-title="Header 2">Paper</td>
           <td data-title="Header 3">Scissors</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
-          <td data-title="Number" data-type="number">$2,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
+          <td class="table-number" data-title="Number">$2,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Blue</td>
           <td data-title="Header 2">Red</td>
           <td data-title="Header 3">Green</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">14</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">14</td>
           <td data-title="Last child">End</td>
         </tr>
       </tbody>
@@ -297,8 +297,8 @@
               &lt;th&gt;First child&lt;/th&gt;
               &lt;th&gt;Default&lt;/th&gt;
               &lt;th&gt;Default&lt;/th&gt;
-              &lt;th data-type="prose"&gt;Prose&lt;/th&gt;
-              &lt;th data-type="number"&gt;Number&lt;/th&gt;
+              &lt;th class="table-prose"&gt;Prose&lt;/th&gt;
+              &lt;th class="table-number"&gt;Number&lt;/th&gt;
               &lt;th&gt;Last Child&lt;/th&gt;
             &lt;/tr&gt;
           &lt;/thead&gt;
@@ -307,24 +307,24 @@
               &lt;td data-title="Header 1"&gt;Apple&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Banana&lt;/td&gt;
               &lt;td data-title="What if a header title is really, really long?"&gt;Pineapple&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;4,00,000&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;4,000,000&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
             &lt;tr&gt;
               &lt;td data-title="Header 1"&gt;Rock&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Paper&lt;/td&gt;
               &lt;td data-title="Header 3"&gt;Scissors&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;$2,000&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;$2,000&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
             &lt;tr&gt;
               &lt;td data-title="Header 1"&gt;Blue&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Red&lt;/td&gt;
               &lt;td data-title="Header 3"&gt;Green&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;14&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;14&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
           &lt;/tbody&gt;
@@ -355,8 +355,8 @@
           <th>First child</th>
           <th>Default</th>
           <th>Default</th>
-          <th data-type="prose">Prose</th>
-          <th data-type="number">Number</th>
+          <th class="table-prose">Prose</th>
+          <th class="table-prose">Number</th>
           <th>Last Child</th>
         </tr>
       </thead>
@@ -365,24 +365,24 @@
           <td data-title="Header 1">Apple</td>
           <td data-title="Header 2" class="highlight">Banana</td>
           <td data-title="What if a header title is really, really long?">Pineapple</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">4,00,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">4,000,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Rock</td>
           <td data-title="Header 2">Paper</td>
           <td data-title="Header 3">Scissors</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
-          <td data-title="Number" data-type="number">$2,000</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.</td>
+          <td class="table-number" data-title="Number">$2,000</td>
           <td data-title="Last child">End</td>
         </tr>
         <tr>
           <td data-title="Header 1">Blue</td>
           <td data-title="Header 2">Red</td>
           <td data-title="Header 3">Green</td>
-          <td data-title="Prose" data-type="prose">This is an example sentence.</td>
-          <td data-title="Number" data-type="number">14</td>
+          <td class="table-prose" data-title="Prose">This is an example sentence.</td>
+          <td class="table-number" data-title="Number">14</td>
           <td data-title="Last child">End</td>
         </tr>
       </tbody>
@@ -397,8 +397,8 @@
               &lt;th&gt;First child&lt;/th&gt;
               &lt;th&gt;Default&lt;/th&gt;
               &lt;th&gt;Default&lt;/th&gt;
-              &lt;th data-type="prose"&gt;Prose&lt;/th&gt;
-              &lt;th data-type="number"&gt;Number&lt;/th&gt;
+              &lt;th class="table-prose"&gt;Prose&lt;/th&gt;
+              &lt;th class="table-number"&gt;Number&lt;/th&gt;
               &lt;th&gt;Last Child&lt;/th&gt;
             &lt;/tr&gt;
           &lt;/thead&gt;
@@ -407,24 +407,24 @@
               &lt;td data-title="Header 1"&gt;Apple&lt;/td&gt;
               &lt;td data-title="Header 2" class="highlight"&gt;Banana&lt;/td&gt;
               &lt;td data-title="What if a header title is really, really long?"&gt;Pineapple&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;4,00,000&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;4,000,000&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
             &lt;tr&gt;
               &lt;td data-title="Header 1"&gt;Rock&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Paper&lt;/td&gt;
               &lt;td data-title="Header 3"&gt;Scissors&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;$2,000&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence. But what if there's a really long, descriptive paragraph. And we need to include lots of space for it, just in case someone wants to read the whole darn thing.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;$2,000&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
             &lt;tr&gt;
               &lt;td data-title="Header 1"&gt;Blue&lt;/td&gt;
               &lt;td data-title="Header 2"&gt;Red&lt;/td&gt;
               &lt;td data-title="Header 3"&gt;Green&lt;/td&gt;
-              &lt;td data-title="Prose" data-type="prose"&gt;This is an example sentence.&lt;/td&gt;
-              &lt;td data-title="Number" data-type="number"&gt;14&lt;/td&gt;
+              &lt;td class="table-prose" data-title="Prose"&gt;This is an example sentence.&lt;/td&gt;
+              &lt;td class="table-number" data-title="Number"&gt;14&lt;/td&gt;
               &lt;td data-title="Last child"&gt;End&lt;/td&gt;
             &lt;/tr&gt;
           &lt;/tbody&gt;
