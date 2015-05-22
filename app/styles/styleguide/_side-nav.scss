@@ -1,9 +1,5 @@
-.menu-btn {
-  background-color: $white;
-  border: 0;
-  font-family: $base-sans-serif;
-  text-align: left;
-  padding-bottom: 1em;
+#menu {
+  text-align: center;
   width: 100%;
 
   @include media($bp-guide) {
@@ -45,7 +41,6 @@
 
   @include media($bp-guide) {
     float: left;
-    // @include span-columns(2);
     display: block;
   }
 
