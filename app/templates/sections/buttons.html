@@ -9,6 +9,7 @@
       <code>
         @mixin button($color, $type: null) {
             @include clearfix;
+            border-radius: 4px;
             cursor: pointer;
             display: inline-block;
             font-family: $base-sans-serif;
@@ -21,7 +22,6 @@
                 background: transparent;
                 border: 2px solid $color;
                 color: $color;
-                text-transform: uppercase;
                 padding: 0.5em 0.75em;
 
             } @else {
