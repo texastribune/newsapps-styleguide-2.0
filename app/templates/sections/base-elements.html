@@ -2,9 +2,9 @@
   <header>
     <h2 class="font-xl">Base Elements</h2>
   </header>
-  <p>The only place that base HTML elements should be given styles is in the helpers/_base.scss file. Few typography styles are assigned directly to HTML elements. All elements in the &lt;body&gt; will be in $base-sans-serif, font-size 16px, and line-height: 1 &mdash; unless otherwise specified.</p>
+  <p>The only place that base HTML elements should be given styles is in the helpers/_base.scss file. Few typography styles are assigned directly to HTML elements. All elements in the <code>&lt;body&gt;</code> have the following styles &mdash; <code>$base-sans-serif, font-size 16px, and line-height: 1</code> &mdash; unless otherwise specified.</p>
   <p>Headers, paragraphs, links and unordered lists are the only HTML elements with additional typography styles. To normalize any bold settings that a browser may apply, we've applied <code>font-weight: 400</code> to <code>&lt;h1&gt;-&lt;h6&gt;</code>.</p>
-  <p>The base &lt;ul&gt; element does not include padding, margins or a list-style, so that unordered lists can be used to create other types of components. For a bulleted or carated list, include the classes .bullet and .carat, respectively.</p>
+  <p>The base <code>&lt;ul&gt;</code> element does not include padding, margins or a list-style, so that unordered lists can be used to create other types of components. For a bulleted or carated list, include the classes <code>.bullet</code> and <code>.carat</code>, respectively.</p>
   <p>We've also included styles to normalize padding on <code>&lt;aside&gt;</code> and <code>&lt;blockquote&gt;</code> elements.</p>
   <p>And we've styled <code>&lt;hr&gt;</code>, and added a <code>.yellow</code> to apply <code>$tribune-yellow</code>.</p>
   <header>
@@ -166,5 +166,81 @@ hr {
       </code>
     </pre>
   </div>
+  <header>
+    <h3 class="font-l">Select &amp; Input</h3>
+  </header>
+  <p>The themes <code>.prose</code> and <code>.graphic</code> include an extension of %forms, base styles for <code>&lt;select&gt;</code> and <code>&lt;input&gt;</code> fields found in the _base.scss file. Unlike other base styles, these are not applied directly to <code>&lt;select&gt;</code> and <code>&lt;input&gt;</code> elements. You can <code>@extend %forms</code> to any class, as we've extended these styles extended <code>.prose</code> or <code>.graphic</code>.</p>
+  <div class="prose">
+    <select class="full-width">
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
 
+    <form action="demo_form.asp">
+      <input type="text" name="FirstName" placeholder="Hello world!">
+      <input type="submit" value="Submit" class="button">
+    </form>
+  </div>
+  <div class="code-block">
+    <button class="button">Example HTML</button>
+    <pre>
+      <code>
+      &lt;select class="full-width"&gt;
+        &lt;option&gt;One&lt;/option&gt;
+        &lt;option&gt;Two&lt;/option&gt;
+        &lt;option&gt;Three&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;form action="demo_form.asp"&gt;
+        &lt;input type="text" name="FirstName" placeholder="Hello world!"&gt;
+        &lt;input type="submit" value="Submit" class="button"&gt;
+      &lt;/form&gt;      
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+%forms {
+  form,
+  select {
+    display: inline-block;
+    &amp;.full-width {
+      width: 100%;
+    }
+  }
+
+  select,
+  input[type="text"],
+  input[type="radio"],
+  input[type="email"],
+  input[type="number"] {
+    @extend %font-base;
+    background: transparent;
+    border: 1px solid $line-gray;
+    display: inline-block;
+    font-family: $base-sans-serif;
+    font-weight: 400;
+    margin-bottom: .5em;
+    min-height: 2em;
+  }
+
+  option,
+  input[type="text"],
+  input[type="radio"],
+  input[type="email"],
+  input[type="number"] {
+    padding: .5em .25em;
+  }
+
+  input[type="submit"],
+  input[type="button"] {
+    @include button($tribune-yellow);
+  }
+}
+      </code>
+    </pre>
+  </div>
 </article>

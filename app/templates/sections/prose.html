@@ -3,48 +3,43 @@
     <h2 class="font-xl">Prose</h2>
   </header>
   <p>Basic prose styles, and the follow components, can be found in theme/_prose.scss.</p>
-  <p>To add our basic paragraph styles to a class, @extend %prose. You can also wrap elements in .prose to apply the basic paragraph styles.</p>
+  <p>To add our basic paragraph styles to a class, <code>@extend %prose</code>. You can also wrap elements in <code>.prose</code> to apply the basic paragraph styles.</p>
   <div class="code-block">
-    <button class="button">Show %prose &amp; .prose</button>
+    <button class="button">Example %prose &amp; .prose</button>
     <pre>
       <code>
-        /* Base Prose Theme */
-        %prose {
-          @extend %font-base;
-          color: $bodytext-black;
-          display: block;
-          font-family: $base-serif;
-          font-weight: 400;
-          line-height: 1.4;
-          text-align: left;
-        }
+/* Base Prose Theme */
+%prose {
+  @extend %font-base;
+  color: $bodytext-black;
+  display: block;
+  font-family: $base-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+}
 
-        // Prose Settings
-        .prose {
-          @extend %prose;
-          @include clearfix;
+.prose {
+  @extend %prose;
+  @include clearfix;
 
-          ul {
-            @extend %font-s;
-            font-family: $base-sans-serif;
-            font-weight: 600;
-            list-style: disc;
-            padding: 0 1em;
-          }
+  ul {
+    @extend %font-s;
+    font-family: $base-sans-serif;
+    font-weight: 600;
+    list-style: disc;
+    padding: 0 1em;
+  }
 
-          li {
-            margin-bottom: .5em;
+  li {
+    margin-bottom: .5em;
 
-            &:last-child {
-              margin-bottom: 1em;
-            }
-          }
+    &amp;:last-child {
+      margin-bottom: 1em;
+    }
+  }
 
-          img {
-            width: 100%;
-          }
-
-        }
+}
       </code>
     </pre>
   </div>
@@ -52,13 +47,13 @@
   <header id="headline">
     <h3 class="font-l">Headlines, Bylines</h3>
   </header>
-  <p>Use the classes .headline and .byline for basic headlines.</p>
+  <p>Use the classes <code>.headline</code> and <code>.byline</code> for basic headlines.</p>
   <header>
     <h1 class="headline">Cat Saves Planet from Apocolypse, Dies in Action</h1>
     <p class="byline">By <a href="http://www.texastribune.org/about/staff/alexa-ura/">Captain Planet</a> | July 0, 2084</p>
   </header>
   <div class="code-block">
-    <button class="button">Show HTML</button>
+    <button class="button">Example HTML</button>
     <pre>
       <code>
       &lt;header&gt;
@@ -69,25 +64,26 @@
     </pre>
   </div>
   <div class="code-block">
-    <button class="button">Show CSS</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
-        .headline {
-          @extend %font-l;
-          font-family: $base-sans-serif;
-          font-weight: 600;
-          margin: 1.25em 0 .6em;
-        }
+.headline {
+  @extend %font-l;
+  font-family: $base-sans-serif;
+  font-weight: 600;
+  margin: 1.25em 0 .6em;
+}
 
-        .byline {
-          @extend %font-s;
-          font-family: $base-sans-serif;
-          margin-bottom: 0;
+.byline {
+  @extend %font-s;
+  font-family: $base-sans-serif;
+  margin-bottom: 1em;
 
-          a {
-            font-weight: 800;
-          }
-        }
+  a {
+    font-weight: 800;
+  }
+}
+
       </code>
     </pre>
   </div>
@@ -95,14 +91,14 @@
   <header id="captions">
     <h3 class="font-l">Captions</h3>
   </header>
-  <p>Captions for photos and other media elements are styled using .caption. Images within .prose will fill 100% of the available width, unless otherwise specified.</p>
+  <p>Captions for photos and other media elements are styled using <code>.caption</code>. Images within .prose will fill 100% of the available width, unless otherwise specified.</p>
   <figure class="prose">
     <img src="http://placekitten.com/g/500/300">
     <figcaption class="caption">This is a picture of a kitten inside a figure.prose.</figcaption>
   </figure>
 
   <div class="code-block">
-    <button class="button">Show HTML</button>
+    <button class="button">Example HTML</button>
     <pre>
       <code>
       &lt;figure class="prose"&gt;
@@ -113,16 +109,17 @@
     </pre>
   </div>
   <div class="code-block">
-    <button class="button">Show CSS</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
-        .caption {
-          @extend %font-s;
-          color: $text-gray;
-          font-family: $base-sans-serif;
-          font-weight: 400;
-          margin: .25em 0;
-        }
+%caption,
+.caption {
+  @extend %font-s;
+  color: $text-gray;
+  font-family: $base-sans-serif;
+  font-weight: 400;
+  margin: .25em 0;
+}
       </code>
     </pre>
   </div>
@@ -130,9 +127,9 @@
   <header id="paragraph-header">
     <h3 class="paragraph-header">Paragraph Headers</h3>
   </header>
-  <p>That ^ is an example of a .paragraph-header. Notice it will automatically transform the text to uppercase. You can also use these styles on other elements using @extend %paragraph-header.</p>
+  <p>That ^ is an example of a <code>.paragraph-header</code>. Notice it will automatically transform the text to uppercase. You can also use these styles on other elements using <code>@extend %paragraph-header</code>.</p>
   <div class="code-block">
-    <button class="button">Show HTML</button>
+    <button class="button">Example HTML</button>
     <pre>
       <code>
         &lt;h3 class="paragraph-header"&gt;Paragraph Headers&lt;/h3&gt;
@@ -140,18 +137,18 @@
     </pre>
   </div>
   <div class="code-block">
-    <button class="button">Show CSS</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
-        %paragraph-header,
-        .paragraph-header {
-          font-family: $base-sans-serif;
-          font-size: .875em;
-          font-weight: 700;
-          letter-spacing: 1px;
-          margin: 1em 0;
-          text-transform: uppercase;
-        }
+%paragraph-header,
+.paragraph-header {
+  font-family: $base-sans-serif;
+  font-size: .875em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 1em;
+  text-transform: uppercase;
+}
       </code>
     </pre>
   </div>
@@ -161,7 +158,7 @@
   </header>
   <p class="explainer-text">Use .explainer-text when you're explaining something, such as how to use the Hospitals Explorer or to define a glossary definition. You can also @extend %explainer-text to another class.</p>
   <div class="code-block">
-    <button class="button">Show HTML</button>
+    <button class="button">Example HTML</button>
     <pre>
       <code>
       &lt;p class="explainer-text"&gt;Text goes here&lt;/p&gt;
@@ -169,18 +166,19 @@
     </pre>
   </div>
   <div class="code-block">
-    <button class="button">Show CSS</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
-        %explainer-text,
-        .explainer-text {
-          background: $explainer-gray;
-          color: $bodytext-black;
-          font-family: $base-sans-serif;
-          font-weight: 300;
-          line-height: 1.3;
-          padding: 1em;
-        }
+%explainer-text,
+.explainer-text {
+  background: $explainer-gray;
+  color: $bodytext-black;
+  font-family: $base-sans-serif;
+  font-weight: 300;
+  line-height: 1.3;
+  padding: 1em;
+  margin-bottom: 1em;
+}
       </code>
     </pre>
   </div>
@@ -188,11 +186,11 @@
   <header>
     <h3 id="block-text" class="font-m">Prose Blocks</h3>
   </header>
-  <p>Add .prose-block to elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose. In most cases, you'll put this type of content in an &lt;aside&gt;.</p>
-  <p>Note: To normalize &lt;aside&gt; and &lt;blockquote&gt; margins across browsers, we've included "margin: 0 0 1em" in helpers/_base.scss.</p>
+  <p>Add <code>.prose-block</code> to elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose. In most cases, you'll put this type of content in an <code>&lt;aside&gt;</code>.</p>
+  <p>Note: To normalize <code>&lt;aside&gt;</code> and <code>&lt;blockquote&gt;</code> margins across browsers, we've included "margin: 0 0 1em" in helpers/_base.scss.</p>
   <!-- Lists -->
   <aside class="prose-block">
-    <h3 class="paragraph-header">Example list</h3>
+    <h3 class="paragraph-header">Example List</h3>
     <ul class="bullet">
       <li>Lists are often used to call out important points.</li>
       <li>They typically begin with an .paragraph-header.</li>
@@ -200,7 +198,7 @@
     </ul>
   </aside>
   <div class="code-block">
-    <button class="button">Show List HTML</button>
+    <button class="button">Example HTML</button>
     <pre>
       <code>
       &lt;aside class="prose-block"&gt;
@@ -215,16 +213,17 @@
     </pre>
   </div>
   <div class="code-block">
-    <button class="button">Show .prose-block</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
-        .prose-block {
-          border-color: $tribune-yellow;
-          border-style: solid;
-          border-width: 1px 0;
-          margin-bottom: calc(16rem / $base);
-          position: relative;
-        }
+.prose-block {
+  border-color: $tribune-yellow;
+  border-style: solid;
+  border-width: 1px 0;
+  margin-bottom: 1em;
+  padding: 1em 0 0;
+  position: relative;
+}
       </code>
     </pre>
   </div>
@@ -232,8 +231,8 @@
   <header id="block-quotes">
     <h3 class="font-l">Block Quotes</h3>
   </header>
-  <p>Use a .blockquote for the text of a block quote, and .blockquote-source for the attribution. You can include the block quote in an &lt;aside&gt; or &lt;blockquote&gt; &mdash; whichever you prefer. We recommending using &lt;q&gt; for your quotes to ensure the browser applies curled double-quotations. If you use a &lt;p class="blockquote"&gt;, remember to include HTML ASCII characters for curled double quotations on either end of the text.</p>
-  <p>Below are two examples of block quotes. The first is an &lt;aside class="prose-block"&gt; with &lt;q class="blockquote"&gt;. The second is a &lt;blockquote class="prose-block"&gt; with &lt;p class="blockquote"&gt;:</p>
+  <p>Use a <code>.blockquote</code> for the text of a block quote, and .blockquote-source for the attribution. You can include the block quote in an <code>&lt;aside&gt;</code> or <code>&lt;blockquote&gt;</code> &mdash; whichever you prefer. We recommending using <code>&lt;q&gt;</code> for your quotes to ensure the browser applies curled double-quotations. If you use a <code>&lt;p class="blockquote"&gt;</code>, remember to include HTML ASCII characters for curled double quotations on either end of the text.</p>
+  <p>Below are two examples of block quotes. The first is an <code>&lt;aside class="prose-block"&gt;</code> with &<code>lt;q class="blockquote"&gt;</code>. The second is a <code>&lt;blockquote class="prose-block"&gt;</code> with <code>&lt;p class="blockquote"&gt;</code>:</p>
   <aside class="prose-block">
     <q class="blockquote">You know what&rsquo;s awesome? Cats. Cats are awesome.</q>
     <p class="blockquote-source">&mdash; Becca Aaronson, cat enthusiast</p>
@@ -243,7 +242,7 @@
     <p class="blockquote-source">&mdash; Becca Aaronson, cat enthusiast</p>
   </blockquote>
   <div class="code-block">
-    <button class="button">Show HTML</button>
+    <button class="button">Example HTML</button>
     <pre>
       <code>
       // Example 1
@@ -256,52 +255,35 @@
       &lt;blockquote class="prose-block"&gt;
         &lt;p class="blockquote"&gt;&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;&lt;/p&gt;
         &lt;p class="blockquote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
-      &lt;/blockquote>
+      &lt;/blockquote&gt;
       </code>
     </pre>
   </div>
   <div class="code-block">
-    <button class="button">Show .block-quote .block-quote-source</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
-      .blockquote {
-        @extend %font-m;
-        font-family: $base-serif;
-        font-style: italic;
-        font-weight: 700;
-        line-height: 1.2;
-        position: relative;
-        text-align: left;
-      }
+.blockquote {
+  @extend %font-m;
+  font-family: $base-serif;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  text-align: left;
+}
 
-      q.blockquote {
-        display: block;
-      }
+q.blockquote {
+  display: block;
+}
 
-      .blockquote-source {
-        @extend %font-base;
-        font-family: $base-sans-serif;
-        font-weight: 300;
-      }
+.blockquote-source {
+  @extend %font-base;
+  font-family: $base-sans-serif;
+  font-weight: 300;
+}
       </code>
     </pre>
   </div>
-  <header>
-    <h3 class="font-l">Select &amp; Input</h3>
-  </header>
-  <p>The classes .prose and .graphic include base styles for &lt;select&gt; and &lt;input&gt; fields. If you add these elements outside of .prose or .graphic, they will not have any styles applied.</p>
-  <div class="prose">
-    <select class="full-width">
-      <option>One</option>
-      <option>Two</option>
-      <option>Three</option>
-    </select>
-
-    <form action="demo_form.asp">
-      <input type="text" name="FirstName" placeholder="Hello world!">
-      <input type="submit" value="Submit" class="button">
-    </form>
-  </div>
-
 
 </article>
