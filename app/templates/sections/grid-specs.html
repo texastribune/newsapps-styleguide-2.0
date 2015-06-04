@@ -10,22 +10,33 @@
     <h3 class="font-l">Content-Block</h3>
   </header>
   <p>Content-blocks are used to ensure that an element does not bump against the edge of the screen on smaller devices or window-sizes. Add the class .content-block to add a 10px left/right margin at all times, or add "@extend %content-block" to the parent-most element's styles. </p>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+        %content-block,
+        .content-block {
+          @include pad(0 10px);
+        }
+      </code>
+    </pre>
+  </div>
 
   <header>
     <h3 class="font-l">Breakpoints</h3>
   </header>
-  <p>For ease of use, we've created 2 types of default breakpoints &mdash; both of which you can override to best fit your project. There are $default-mobile and $default-desktop, which set max and min widths, respectively. And there are $small, $medium and $large default breakpoints for mobile-first web design with multiple layouts. All of these variables can be reset for your specific project needs.</p>
-  <p>Many modules also have unique breakpoint variables included at the top of the file, which are set to $default-desktop or $default-mobile. You can change the module's breakpoint by giving that variable a new value.</p>
+  <p>For ease of use, we've created two types of default breakpoints &mdash; both of which you can override to best fit your project. There are $default-mobile and $default-desktop, which set max and min widths, respectively. And there are $small, $medium and $large default breakpoints for mobile-first web design with multiple layouts. All of these variables can be overriden for your specific project needs.</p>
+  <p>Some modules also have a unique breakpoint variable included at the top of the file, which is set to $default-desktop or $default-mobile. You can change the module's breakpoint by giving that variable a new value.</p>
   <div class="code-block">
-    <button class="button">Example Code</button>
+    <button class="button">Example SCSS</button>
     <pre>
       <code>
+        $default-desktop: new-breakpoint(min-width 768px);
+        $default-mobile: new-breakpoint(max-width 480px);
+        
         $small: new-breakpoint(min-width 460px max-width 810px);
         $medium: new-breakpoint(min-width 811px max-width 1080px);
         $large: new-breakpoint(min-width 1081px);
-
-        $default-desktop: new-breakpoint(min-width 768px);
-        $default-mobile: new-breakpoint(max-width 480px);
       </code>
     </pre>
   </div>
