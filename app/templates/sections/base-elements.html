@@ -1,0 +1,170 @@
+<article id="base-elements">
+  <header>
+    <h2 class="font-xl">Base Elements</h2>
+  </header>
+  <p>The only place that base HTML elements should be given styles is in the helpers/_base.scss file. Few typography styles are assigned directly to HTML elements. All elements in the &lt;body&gt; will be in $base-sans-serif, font-size 16px, and line-height: 1 &mdash; unless otherwise specified.</p>
+  <p>Headers, paragraphs, links and unordered lists are the only HTML elements with additional typography styles. To normalize any bold settings that a browser may apply, we've applied <code>font-weight: 400</code> to <code>&lt;h1&gt;-&lt;h6&gt;</code>.</p>
+  <p>The base &lt;ul&gt; element does not include padding, margins or a list-style, so that unordered lists can be used to create other types of components. For a bulleted or carated list, include the classes .bullet and .carat, respectively.</p>
+  <p>We've also included styles to normalize padding on <code>&lt;aside&gt;</code> and <code>&lt;blockquote&gt;</code> elements.</p>
+  <p>And we've styled <code>&lt;hr&gt;</code>, and added a <code>.yellow</code> to apply <code>$tribune-yellow</code>.</p>
+  <header>
+  	<h3 class="font-m">Example Header</h3>
+  </header>
+  <p>This is a paragraph with a <a href="">fake link</a>.</p>
+  <ul>
+    <li>This is a regular list of items.</li>
+    <li>Styles have been normalized, so you can use it as a building block.</li>
+    <li>If you want pretty styles/margins/etc. use .bullet.</li>
+  </ul>
+  <ul class="bullet">
+    <li>This list has class .bullet</li>
+    <li>Because we like our bullet points dotted.</li>
+  </ul>
+  <ul class="carat">
+    <li>This list has class .carat</li>
+    <li>Cause it's cute.</li>
+  </ul>
+  <hr>
+  <hr class="yellow">
+  <div class="code-block">
+    <button class="button">Show HTML</button>
+    <pre>
+      <code>
+
+        &lt;header&gt;
+          &lt;h3 class="font-m"&gt;Example Header&lt;/h3&gt;
+        &lt;/header&gt;
+        &lt;p&gt;This is a paragraph with a &lt;a href=""&gt;fake link&lt;/a&gt;.&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;This is a regular list.&lt;/li&gt;
+          &lt;li&gt;Styles have been normalized, so you can use it as a building block.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="bullet"&gt;
+          &lt;li&gt;This list has class .bullet&lt;/li&gt;
+          &lt;li&gt;Because we like our bullet points dotted.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="carat"&gt;
+          &lt;li&gt;This list has class .carat&lt;/li&gt;
+          &lt;li&gt;Cause it's cute.&lt;/li&gt;
+        &lt;/ul&lt;
+        &lt;hr&gt;
+        &lt;hr class="yellow"&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <button class="button">Show Base Styles</button>
+    <pre>
+      <code>
+/* Base Theme for HTML elements */
+
+body {
+  background-color: $white;
+  font-family: $base-sans-serif;
+  line-height: 1;
+}
+
+a {
+  color: $href-teal;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+aside,
+blockquote {
+  margin: 0 0 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  margin: 0 0 .5em;
+}
+
+q,
+p {
+  @include font-size($base);
+  font-family: $base-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  &.bullet,
+  &.carat {
+    font-family: $base-sans-serif;
+    font-weight: 400;
+    padding: 0 1em;
+
+    li {
+      margin-bottom: .5em;
+
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+
+  }
+
+  &.bullet {
+    list-style: disc;
+  }
+
+  &.carat {
+
+    li {
+      &:before {
+        content: '\203A';
+        font-family: $base-sans-serif;
+        margin: 0 .5em 0 -1em;
+        padding: 0;
+      }
+    }
+  }
+
+}
+
+figure {
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+hr {
+  background-color: $line-gray;
+  border: 0 none;
+  height: 2px;
+  margin-bottom: 1em;
+
+  &.thin {
+    height: 1px;
+  }
+
+  &.yellow {
+    background-color: $tribune-yellow;
+  }
+}
+
+
+.container {
+  @include clearfix;
+}
+
+      </code>
+    </pre>
+  </div>
+
+</article>
