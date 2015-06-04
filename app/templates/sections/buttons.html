@@ -1,60 +1,57 @@
 <article id="buttons">
   <header>
-    <h3 class="font-l">Buttons</h3>
+    <h3 class="font-xl">Buttons</h3>
   </header>
-  <p>Add the @mixin button($color) to create any color button with the basic button styles. Button styles are not applied to the &lt;button&gt; tag directly. For standard buttons, use .button, which has @mixin button($tribune-yellow) included. For a ghost button, add the argument 'ghost':  @mixin button($color, ghost). The class .ghost-button will include a teal ghost button.</p>
+  <p>Add the <code>@mixin button($color)</code> to create any color button with the basic button styles. Button styles are not applied to the <code>&lt;button&gt;</code> tag directly. For standard buttons, use <code>.button</code>, which has <code>@mixin button($tribune-yellow)</code> included. For a ghost button, add the argument 'ghost':  <code>@mixin button($color, ghost)</code>. The class <code>.ghost-button</code> will include a teal ghost button.</p>
   <div class="code-block">
-    <button class="button">Show @mixin button($color)</button>
+    <button class="button">Show SCSS</button>
     <pre>
       <code>
-        @mixin button($color, $type: null) {
-            @include clearfix;
-            border-radius: 4px;
-            cursor: pointer;
-            display: inline-block;
-            font-family: $base-sans-serif;
-            letter-spacing: .03rem;
-            margin: 0 0 0.3em;
-            text-align: center;
-            vertical-align: middle;
+@mixin button($color, $type: null) {
+  @include clearfix;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-sans-serif;
+  letter-spacing: .03rem;
+  margin: 0 0 0.3em;
+  text-align: center;
+  vertical-align: middle;
 
-            @if $type == ghost {
-                background: transparent;
-                border: 2px solid $color;
-                color: $color;
-                padding: 0.5em 0.75em;
 
-            } @else {
-                background: $color;
+  @if $type == ghost {
+    background: transparent;
+    border: 2px solid $color;
+    color: $color;
+    padding: .4em .75em .5em;
+  } @else {
+    background: $color;
+    @if $color == $teal {
+     color: $white;
+    } @else {
+      color: $bodytext-black;
+    }
+    border: 0px;
+    padding: .5em .75em .625em;
+  }
 
-                @if $color == $teal {
-                    color: $white;
+  &amp;:active,
+  &amp;:hover {
+    @if $type == ghost {
+      background-color: transparentize($color, 0.95);
+    } @else {
+      background-color: transparentize($color, .3);
+    }
+  }
+}
 
-                } @else {
-                    color: $bodytext-black;
-                }
-                border: 0px;
-                padding: .5em .75em .625em;
-            }
+.button {
+  @include button($tribune-yellow);
+}
 
-            &:active,
-            &:hover {
-                @if $type == ghost {
-                    background-color: transparentize($color, 0.95);
-
-                } @else {
-                    background-color: transparentize($color, .3);
-                }
-            }
-        }
-
-        .button {
-            @include button($tribune-yellow);
-        }
-
-        .ghost-button {
-            @include button($teal, ghost);
-        }
+.ghost-button {
+  @include button($teal, ghost);
+}
       </code>
     </pre>
   </div>

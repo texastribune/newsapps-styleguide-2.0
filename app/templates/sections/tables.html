@@ -2,7 +2,166 @@
   <header>
     <h2 class="font-xl">Tables</h2>
   </header>
-  <p>The @mixin responsive-table() has a variety of options to help build the perfect responsive table for your needs. When the table converts to a mobile-view, you can either display the headers as blocks (default) or inline with the cell value (and change the width of the header). You can also choose to hide the first row header and convert the cell value to header styles (default) or show the header.</p>
+  <p>The <code>@mixin responsive-table()</code> has a variety of options to help build the perfect responsive table for your needs. When the table converts to a mobile-view, you can either display the headers as blocks (default) or inline with the cell value (and change the width of the header). You can also choose to hide the first row header and convert the cell value to header styles (default) or show the header.</p>
+  <div class="code-block">
+    <button class="button">Show @mixin responsive-table()</button>
+    <pre>
+      <code>
+@mixin responsive-table($bp-table:$default-mobile, $hide-first-th:true, $mobile-header-type:block, $mobile-header-width:30%) {
+  font-family: $base-sans-serif;
+  margin-bottom: 1em;
+  width: 100%;
+
+  @include media($bp-table) {
+    border-top: 1px solid $line-gray;
+    display: block;
+    font-size: .875em;
+  }
+
+  thead {
+    @include media($bp-table) {
+      display: none;
+    }
+  }
+
+  tbody {
+    @include media($bp-table) {
+      display: block;
+    }
+  }
+
+  th,
+  td {
+    &amp;:last-child,
+    &amp;.table-prose {
+      text-align: left;
+    }
+
+    &amp;:last-child,
+    &amp;.table-number {
+      text-align: right;
+
+      @include media($bp-table) {
+        text-align: left;
+      }
+    }
+  }
+
+  th {
+    border-bottom: 1px solid $line-gray;
+    font-size: .9em;
+    font-weight: 800;
+    padding: 0 12px 8px;
+    text-align: left;
+    vertical-align: middle;
+
+    @include media($bp-table) {
+      display: block;
+    }
+  }
+
+  td {
+    font-size: .875em;
+    padding: 8px 12px;
+    text-align: left;
+
+    @include media($bp-table) {
+      @include clearfix;
+      display: block;
+      font-weight: 300;
+      padding: 0 12px 8px;
+      text-align: left;
+
+      @if attr(data-title) {
+        &amp;:before {
+          content: attr(data-title) '\A';
+          display: block;
+          font-weight: 800;
+          margin-bottom: .5em;
+          white-space: pre-wrap;
+        }
+      }
+
+      &amp;:first-child {
+        padding-top: 1em;
+      }
+
+      @if $hide-first-th {
+
+        &amp;:first-child {
+          font-size: 1em;
+          font-weight: 800;
+          padding-top: 8px;
+        }
+
+        &amp;[data-title] {
+          &amp;:first-child:before {
+            content: none;
+          }
+        }
+      }
+
+      @if $mobile-header-type == inline-block {
+
+        &amp;:before {
+          float: left;
+          display: inline-block;
+          margin: 0 1em .25em 0;
+          width: $mobile-header-width;
+        }
+      }
+
+    }
+  }
+
+  tr {
+    &amp;:nth-child(odd) td {
+      background-color: $background-gray;
+
+      &amp;.highlight {
+        background-color: none;
+        background-color: transparentize($tribune-yellow, .75);
+        font-weight: 600;
+      }
+    }
+
+    @include media($bp-table) {
+      display: block;
+    }
+  }
+
+  // Include .highlight to bring attention an entire row
+  // such as the total values or current year
+  tr {
+    &amp;.highlight {
+      background-color: transparentize($tribune-yellow, .75);
+      font-weight: 600;
+
+      &amp;:nth-child(odd) td {
+        background-color: transparentize($tribune-yellow, .75);
+      }
+    }
+
+    td {
+      padding-top: .5em;
+    }
+
+  }
+
+  td {
+    &amp;.highlight {
+      background-color: transparentize($tribune-yellow, .75);
+      font-weight: 600;
+
+      @include media($bp-table) {
+        padding-top: 1em;
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
   <div class="explainer-text">
   <header>
     <h3 class="font-m">For optimal use, you may need to include the following attributes in your table HTML:</h3>
@@ -14,6 +173,17 @@
       <li>class="table-number": Add to &lt;th&gt; or &lt;td&gt; to ensure numbers align right</li>
     </ul>
   </div>
+  <p class="paragraph-header">Default settings</p>
+  <pre>
+    <code>
+    @mixin responsive-table(
+      $bp-table:$default-mobile, 
+      $hide-first-th:true, 
+      $mobile-header-type:block, 
+      $mobile-header-width:30%
+    )
+    </code>
+  </pre>
   <p>We've included four classes with the primary table settings, which you can preview below. Here's a more thorough description of the @mixin's variables and default settings:</p>
   <div class="explainer-text">
   <header>
@@ -47,7 +217,7 @@
   </div>
   <article class="table-example">
     <header>
-      <h3 class="font-l">.responsive</h3>
+      <h3 class="font-l"><code>.responsive</code></h3>
     </header>
     <table class="responsive">
       <thead>
@@ -133,7 +303,7 @@
       </pre>
     </div>
     <div class="code-block">
-      <button class="button">Show mixin settings</button>
+      <button class="button">Show @mixin</button>
       <pre>
         <code>
         // + Transforms first data cell to header on mobile
@@ -147,7 +317,7 @@
   </article>
   <article class="table-example">
     <header>
-      <h3 class="font-l">.inline</h3>
+      <h3 class="font-l"><code>.inline</code></h3>
     </header>
     <table class="inline">
       <thead>
@@ -233,7 +403,7 @@
       </pre>
     </div>
     <div class="code-block">
-      <button class="button">Show mixin settings</button>
+      <button class="button">Show @mixin</button>
       <pre>
         <code>
         // + Transforms first data cell to header on mobile
@@ -247,7 +417,7 @@
   </article>
   <article class="table-example">
     <header>
-      <h3 class="font-l">.show-first-th</h3>
+      <h3 class="font-l"><code>.show-first-th</code></h3>
     </header>
     <table class="show-first-th">
       <thead>
@@ -333,7 +503,7 @@
       </pre>
     </div>
     <div class="code-block">
-      <button class="button">Show mixin settings</button>
+      <button class="button">Show @mixin</button>
       <pre>
         <code>
         // + Includes all data-title headers on mobile
@@ -347,7 +517,7 @@
   </article>
   <article class="table-example">
     <header>
-      <h3 class="font-l">.inline-show-first-th</h3>
+      <h3 class="font-l"><code>.inline-show-first-th</code></h3>
     </header>
     <table class="inline-show-first-th">
       <thead>
@@ -433,7 +603,7 @@
       </pre>
     </div>
     <div class="code-block">
-      <button class="button">Show mixin settings</button>
+      <button class="button">Show @mixin()</button>
       <pre>
         <code>
         // + Includes all data-title headers on mobile
