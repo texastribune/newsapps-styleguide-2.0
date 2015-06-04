@@ -48,7 +48,7 @@
           &lt;li&gt;Cause it's cute.&lt;/li&gt;
         &lt;/ul&lt;
         &lt;hr&gt;
-        &lt;hr class="yellow"&gt;
+		&lt;hr class="yellow"&gt;
       </code>
     </pre>
   </div>
@@ -68,7 +68,7 @@ a {
   color: $href-teal;
   text-decoration: none;
 
-  &:hover {
+  &amp;:hover {
     text-decoration: underline;
   }
 }
@@ -101,8 +101,8 @@ ul {
   list-style: none;
   padding: 0;
 
-  &.bullet,
-  &.carat {
+  &amp;.bullet,
+  &amp;.carat {
     font-family: $base-sans-serif;
     font-weight: 400;
     padding: 0 1em;
@@ -110,21 +110,21 @@ ul {
     li {
       margin-bottom: .5em;
 
-      &:last-child {
+      &amp;:last-child {
         margin-bottom: 1em;
       }
     }
 
   }
 
-  &.bullet {
+  &amp;.bullet {
     list-style: disc;
   }
 
-  &.carat {
+  &amp;.carat {
 
     li {
-      &:before {
+      &amp;:before {
         content: '\203A';
         font-family: $base-sans-serif;
         margin: 0 .5em 0 -1em;
@@ -149,11 +149,11 @@ hr {
   height: 2px;
   margin-bottom: 1em;
 
-  &.thin {
+  &amp;.thin {
     height: 1px;
   }
 
-  &.yellow {
+  &amp;.yellow {
     background-color: $tribune-yellow;
   }
 }
