@@ -77,7 +77,7 @@ article {
 }
 
 .teal-button {
-  @include button($teal);
+  @include btn($teal);
 }
 
 .button,

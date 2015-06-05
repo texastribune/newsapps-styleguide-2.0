@@ -36,12 +36,15 @@
     "vinyl-transform": "^1.0.0",
     "xlsx": "^0.7.12"
   },
-    "scripts": {
+  "scripts": {
     "spreadsheet/authorize": "./bin/authorize.js",
     "spreadsheet/fetch": "./bin/fetch_spreadsheet.js",
     "spreadsheet/edit": "./bin/edit_spreadsheet.js",
     "assets/push": "./bin/push_assets_to_s3.sh",
     "assets/pull": "./bin/pull_assets_from_s3.sh",
     "deploy": "./bin/deploy.sh && npm run assets/push"
+  },
+  "dependencies": {
+    "newsapps-styles": "^1.0.1"
   }
 }
