@@ -45,6 +45,6 @@
     "deploy": "./bin/deploy.sh && npm run assets/push"
   },
   "dependencies": {
-    "newsapps-styles": "^1.0.0"
+    "newsapps-styles": "^1.0.1"
   }
 }
