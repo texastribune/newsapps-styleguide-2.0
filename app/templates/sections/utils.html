@@ -1,0 +1,130 @@
+<article id="utils">
+  <!-- Grid Specs -->
+  <header>
+    <h2 class="font-xl">Utils</h2>
+  </header>
+  <p>The grid @mixins are located in helpers/_utils.scss. The News Apps graphic and app kits include the <a href="http://neat.bourbon.io/">Bourbon Neat</a> semantic grid framework.</p>
+  <p>To include an element in a responsive grid design, add the class .container to the parent-most HTML element. We've overriden Bourbon's $max-width to 1081px, which is typical for our app projects. To change how wide the grid can stretch, set the variable $max-width in your project.</p>
+
+  <header>
+    <h3 class="font-l">Clearfix</h3>
+  </header>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+        @mixin clearfix {
+          &:after {
+           visibility: hidden;
+           display: block;
+           font-size: 0;
+           content: " ";
+           clear: both;
+           height: 0;
+         }
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-l">Content-Block</h3>
+  </header>
+  <p>Content-blocks are used to ensure that an element does not bump against the edge of the screen on smaller devices or window-sizes. Add the class .content-block to add a 10px left/right margin at all times, or add "@extend %content-block" to the parent-most element's styles. </p>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+        %content-block,
+        .content-block {
+          @include pad(0 10px);
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-l">Clear-List-Styles</h3>
+  </header>
+  <p>If you want to use a <code>&lt;ul></code> as a building block without any added styles, you can remove the list-style-type/padding/margin with this class or <code>@extend %clear-list-styles</code> on another class.</p>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+        %clear-list-styles,
+        .clear-list-styles {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-l">Breakpoints</h3>
+  </header>
+  <p>For ease of use, we've created two types of default breakpoints &mdash; both of which you can override to best fit your project or not use at all. There are $default-mobile and $default-desktop, which set max and min widths, respectively. And there are $small, $medium and $large default breakpoints for mobile-first web design with multiple layouts.</p>
+  <p>Some modules also have a unique breakpoint variable included at the top of the file, which is set to $default-desktop or $default-mobile. You can change the module's breakpoint by giving that variable a new value.</p>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+        // Default Breakpoints
+        // ===================
+        // These are fairly meaningless default settings.
+        // Feel free to reset these variables
+        // to fit the needs of your specific project.
+
+        $default-desktop: 768px;
+        $default-mobile: 480px;
+
+        // Usage
+
+        @media (min-width: 768px) {
+          display: none;
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-l">Media Queries</h3>
+  </header>
+  <p>The previous version of this style guide relied on Bourbon Neat's grid system. We've removed that package, but if you'd like to continue using <code>@include media($breakpoint)</code>, we've included an adapted version of the @media mixin.</p>
+  <div class="code-block">
+    <button class="button">Example SCSS Usage</button>
+    <pre>
+      <code>
+        @include media($bp-footer) {
+          padding: 0;
+          text-align: none;
+        }
+      </code>
+    </pre>
+  </div>
+
+  <header>
+    <h3 class="font-l">Hide Mixin</h3>
+  </header>
+  <p>Sometimes you'll want to hide an element on Desktop or Mobile. We've created a mixins to help:</p>
+  <p>If you only provide a $break-point (example: <code>@include hide($default-desktop) {}</code>), the mixin will apply styles at that min-width. You can set a secondary variable to change the @mixin to look for max-width (example: <code>@include hide($default-mobile, max-width);</code>)</p>
+  <div class="code-block">
+    <button class="button">Example SCSS</button>
+    <pre>
+      <code>
+        // Hide Mixin
+        // =========================
+
+        @mixin hide($bp, $type:'min-width') {
+          @media($type: $bp) {
+            display: none;
+          }
+        }
+
+      </code>
+    </pre>
+  </div>
+
+
+</article>

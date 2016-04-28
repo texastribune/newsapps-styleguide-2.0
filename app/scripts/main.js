@@ -9,4 +9,15 @@ $(document).ready(function(){
   $('#menu').click(function() {
     $('#nav-options').toggle();
   });
+
+  if ($(window).width >= 768) {
+    console.log('hello');
+    $('#nav-options').show();
+  }
 });
+
+$(window).resize(function() {
+  if ($(window).width() >= 768) {
+    $('#nav-options').show();
+  }
+})

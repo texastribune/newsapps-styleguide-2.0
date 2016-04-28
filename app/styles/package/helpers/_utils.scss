@@ -4,12 +4,8 @@
 // Feel free to reset these variables
 // to fit the needs of your specific project.
 
-$small: new-breakpoint(min-width 460px max-width 810px);
-$medium: new-breakpoint(min-width 811px max-width 1080px);
-$large: new-breakpoint(min-width 1081px);
-
-$default-desktop: new-breakpoint(min-width 768px);
-$default-mobile: new-breakpoint(max-width 480px);
+$default-desktop: 768px;
+$default-mobile: 480px;
 
 // Clearfix
 // --------
@@ -77,76 +73,11 @@ $default-mobile: new-breakpoint(max-width 480px);
   }
 }
 
-// Mobile vs. Desktop Mixins
+// Hide Mixins
 // =========================
 
-@mixin hide($bp) {
-  @include media($bp) {
+@mixin hide($bp, $type:'min-width') {
+  @media($type: $bp) {
     display: none;
-  }
-}
-
-@mixin mobile-only {
-  display: block;
-
-  @include media($small) {
-    display: none;
-  }
-
-  @include media($medium) {
-    display: none;
-  }
-
-  @include media($large) {
-    display: none;
-  }
-}
-
-@mixin desktop-only {
-  display: none;
-
-  @include media($small) {
-    display: block;
-  }
-
-  @include media($medium) {
-    display: block;
-  }
-
-  @include media($large) {
-    display: block;
-  }
-}
-
-@mixin desktop-hide {
-  display: block;
-
-  @include media($small) {
-    display: block;
-  }
-
-  @include media($medium) {
-    display: none;
-  }
-
-  @include media($large) {
-    display: none;
-  }
-}
-
-@mixin mobile-hide {
-  @include clearfix;
-  display: none;
-
-  @include media($small) {
-    display: none;
-  }
-
-  @include media($medium) {
-    display: block;
-  }
-
-  @include media($large) {
-    display: block;
   }
 }

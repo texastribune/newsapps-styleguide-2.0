@@ -2,7 +2,6 @@
 
 // Extend for basic paragraph styles
 %prose {
-  @extend %font-base;
   color: $bodytext-black;
   display: block;
   font-family: $base-serif;
@@ -24,16 +23,10 @@
 .prose {
   @include clearfix;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 .5em;
+  p {
+    @extend %prose;
+    @extend %font-base;
   }
-
-  p { @extend %prose; }
 
   hr {
     &.thin {
