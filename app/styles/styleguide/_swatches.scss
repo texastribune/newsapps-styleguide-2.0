@@ -1,5 +1,5 @@
 .swatches {
-  // @include list-grid($default-desktop, 12, 3);
+  @include list-grid($default-desktop, 100, 3);
 
   li {
     background-color: $background-gray;

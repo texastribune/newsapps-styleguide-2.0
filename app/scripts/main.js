@@ -1,26 +1,4 @@
-'use strict';
-
-var menuStyles = function() {
-
-  var headHeight = $('.row-wrapper').offset().top;
-
-  if ($(window).width() > 850) {
-    $('#side-nav').css({display: 'block'});
-
-    if ($(window).height() > headHeight) {
-      $('#side-nav').addClass('fix');
-      $('.newsapps-logo').addClass('shift');
-      $('.main').addClass('shift');
-    }
-
-  } else {
-      $('#side-nav').removeAttr('top').removeClass('fix');
-      $('#side-nav').css({display: 'none'});
-      $('.newsapps-logo').removeClass('shift');
-      $('.main').removeClass('shift');
-  }
-
-};
+/* global $ */
 
 $(document).ready(function(){
   // Hide-Show code blocks
@@ -29,16 +7,6 @@ $(document).ready(function(){
   });
 
   $('#menu').click(function() {
-    $('#side-nav').toggle();
+    $('#nav-options').toggle();
   });
-
-  menuStyles();
-});
-
-$(window).resize(function() {
-  menuStyles();
-});
-
-$(window).scroll(function () {
-  menuStyles();
 });

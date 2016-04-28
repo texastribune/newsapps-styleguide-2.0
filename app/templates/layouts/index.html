@@ -7,45 +7,37 @@
 {% block content %}
 
 <div class="container">
-  <section id="styleguide-header" class="styleguide-header">
-    <figure class="newsapps-logo">
-      <img src="assets/images/news_apps_logo.png"></img>
-    </figure>
-    <header>
-      <h1 class="font-xl">Style Guide</h1>
+  <nav>
+    <header class="styleguide-header">
+      <h1 class="font-xl">Interactive Data &amp; Visuals &mdash; Style Guide</h1>
+      <button id="menu" class="nav-button ghost-button"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </header>
-    <button id="menu" class="ghost-button">Menu</button>
-  </section>
-  <div class="row-wrapper">
-    <section id="side-nav" class="side-nav">
-      <ul>
-        <li><a href="#colors">Colors</a></li>
-        <li><a href="#logos">Trib Logos</a></li>
-        <li><a href="#grid-specs">Grid Specs</a></li>
-        <li><a href="#grid-mixins">Grid Mixins</a></li>
-        <li><a href="#typography">Typography</a></li>
-        <li><a href="#base-elements">Base Elements</a></li>
-        <li><a href="#prose">Prose</a></li>
-        <li><a href="#buttons">Buttons</a></li>
-        <li><a href="#graphic">Graphic Theme</a></li>
-        <li><a href="#tables">Tables</a></li>
-      </ul>
-    </section>
-    <section class="main content-block">
-      {% include "sections/philosophy.html" %}
-      {% include "sections/colors.html" %}
-      {% include "sections/logos.html" %}
-      {% include "sections/grid-specs.html" %}
-      {% include "sections/grid-mixins.html" %}
-      {% include "sections/typography.html" %}
-      {% include "sections/base-elements.html" %}
-      {% include "sections/prose.html" %}
-      {% include "sections/buttons.html" %}
-      {% include "sections/graphic.html" %}
-      {% include "sections/tables.html" %}
-
-    </section>
-  </div>
+    <ul id="nav-options" class="nav">
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#logos">Trib Logos</a></li>
+      <li><a href="#grid-specs">Grid Specs</a></li>
+      <li><a href="#grid-mixins">Grid Mixins</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#base-elements">Base Elements</a></li>
+      <li><a href="#prose">Prose</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#graphic">Graphic Theme</a></li>
+      <li><a href="#tables">Tables</a></li>
+    </ul>
+  </nav>
+  <article class="main content-block">
+    {% include "sections/philosophy.html" %}
+    {% include "sections/colors.html" %}
+    {% include "sections/logos.html" %}
+    {% include "sections/grid-specs.html" %}
+    {% include "sections/grid-mixins.html" %}
+    {% include "sections/typography.html" %}
+    {% include "sections/base-elements.html" %}
+    {% include "sections/prose.html" %}
+    {% include "sections/buttons.html" %}
+    {% include "sections/graphic.html" %}
+    {% include "sections/tables.html" %}
+  </article>
 </div>
 <footer class="footer">
   <div class="container">

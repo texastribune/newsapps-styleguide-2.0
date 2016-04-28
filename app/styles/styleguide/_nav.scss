@@ -1,6 +1,6 @@
-#menu {
+.menu-button {
   text-align: center;
-  width: 100%;
+  width: 3em;
 
   @include media($bp-guide) {
     display: none;
@@ -8,16 +8,10 @@
 
 }
 
-#side-nav {
-  display: none;
-}
-
-.side-nav {
+.nav {
   @include clearfix;
-
-  ul {
-    margin: 0 0 1.5em;
-  }
+  display: none;
+  margin: 0 0 1.5em;
 
   li {
     border-bottom: 1px solid $background-gray;
@@ -32,16 +26,9 @@
 
     &:hover {
       background-color: transparentize($teal, .5);
-      transition: padding .2s ease;
       padding-left: .25em;
-
+      transition: padding .2s ease;
     }
-
-  }
-
-  @include media($bp-guide) {
-    float: left;
-    display: block;
   }
 
 }

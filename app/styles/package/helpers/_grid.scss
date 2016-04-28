@@ -48,25 +48,25 @@ $max-width: 1081px;
 //   }
 // }
 //
-// @mixin list-grid ($bp, $col-width, $number-li) {
-//   // Creates a grid for list items at single breakpoint
-//   // $bp = breakpoint
-//   // $col-width = the number of span-columns in your grid
-//   // $number-li = the number of list items
-//
-//   ul {
-//     @include span-columns($col-width);
-//     @include pad(0);
-//
-//     li {
-//       @include span-columns($col-width of $col-width);
-//       @include media($bp) {
-//         @include span-columns($col-width / $number-li of $col-width);
-//         @include omega($number-li+n);
-//       }
-//     }
-//   }
-// }
+@mixin list-grid ($bp, $col-width, $number-li) {
+  // Creates a grid for list items at single breakpoint
+  // $bp = breakpoint
+  // $col-width = the number of span-columns in your grid
+  // $number-li = the number of list items
+
+  ul {
+    padding: 0;
+    width: $col-width;
+
+    li {
+      width: 100%;
+
+      @include media($bp) {
+        width: $col-width / $number-li;
+      }
+    }
+  }
+}
 //
 // @mixin div-grid ($bp, $col-width, $number-div) {
 //   // Create a div grid with single breakpoint
