@@ -1,0 +1,10 @@
+@import 'base/normalize';
+@import 'helpers/grid';
+@import 'helpers/colors';
+@import 'helpers/typography';
+@import 'helpers/base';
+
+.test {
+  background-color: blue;
+  color: yellow;
+}

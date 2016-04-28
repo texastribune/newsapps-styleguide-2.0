@@ -1,4 +1,9 @@
-@import 'node_modules/newsapps-styles/initialize';
+// To use current package uncomment:
+// @import 'node_modules/newsapps-styles/initialize';
+
+// To test and update package styles, uncomment:
+@import 'package/initialize';
+
 
 // Style Guide
 @import 'styleguide/main';
