@@ -1,3 +1,16 @@
+// Default Breakpoints
+// ===================
+// These are fairly meaningless default settings.
+// Feel free to reset these variables
+// to fit the needs of your specific project.
+
+$small: new-breakpoint(min-width 460px max-width 810px);
+$medium: new-breakpoint(min-width 811px max-width 1080px);
+$large: new-breakpoint(min-width 1081px);
+
+$default-desktop: new-breakpoint(min-width 768px);
+$default-mobile: new-breakpoint(max-width 480px);
+
 // Clearfix
 // --------
 // Ensure elements don't accidentally overlap.
@@ -12,23 +25,25 @@
  }
 }
 
-@mixin outer-container($local-max-width: $max-width) {
-  @include clearfix;
-  max-width: $local-max-width;
-  margin: {
-    left: auto;
-    right: auto;
-  }
+%content-block,
+.content-block {
+  padding: 0 10px;
 }
 
-$grid-columns: 12;
-$default-grid-columns: 12;
-$default-feature: min-width;
+%clear-list-styles,
+.clear-list-styles {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-@mixin media($query: $feature $value $columns, $total-columns: $grid-columns) {
+@mixin media($query: $feature $value $columns, $total-columns: 12) {
+  $default-grid-columns: 12;
+  $default-feature: min-width;
+
   @if length($query) == 1 {
     @media screen and ($default-feature: nth($query, 1)) {
-      $default-grid-columns: $grid-columns;
+      $default-grid-columns: 12;
       $grid-columns: $total-columns !global;
       @content;
       $grid-columns: $default-grid-columns !global;
@@ -36,7 +51,7 @@ $default-feature: min-width;
   } @else {
     $loop-to: length($query);
     $media-query: 'screen and ';
-    $default-grid-columns: $grid-columns;
+    $default-grid-columns: 12;
     $grid-columns: $total-columns !global;
 
     @if is-not(is-even(length($query))) {
@@ -62,49 +77,76 @@ $default-feature: min-width;
   }
 }
 
-$container-display-table: true !default;
-$default-layout-direction: LTR !default;
-$layout-direction: LTR !global;
+// Mobile vs. Desktop Mixins
+// =========================
 
-@mixin span-columns($span: $columns of $container-columns, $display: block) {
-  $columns: nth($span, 1);
-  $container-columns: container-span($span);
+@mixin hide($bp) {
+  @include media($bp) {
+    display: none;
+  }
+}
 
-  $parent-columns: get-parent-columns($container-columns) !global;
+@mixin mobile-only {
+  display: block;
 
-  $direction: get-direction($layout-direction, $default-layout-direction);
-  $opposite-direction: get-opposite-direction($direction);
+  @include media($small) {
+    display: none;
+  }
 
-  $display-table: is-display-table($container-display-table, $display);
+  @include media($medium) {
+    display: none;
+  }
 
-  @if $display-table  {
-    display: table-cell;
-    width: percentage($columns / $container-columns);
-  } @else {
-    float: #{$opposite-direction};
+  @include media($large) {
+    display: none;
+  }
+}
 
-    @if $display != no-display {
-      display: block;
-    }
+@mixin desktop-only {
+  display: none;
 
-    @if $display == collapse {
-      @include -neat-warn("The 'collapse' argument will be deprecated. Use 'block-collapse' instead.");
-    }
+  @include media($small) {
+    display: block;
+  }
 
-    @if $display == collapse or $display == block-collapse {
-      width: flex-grid($columns, $container-columns) + flex-gutter($container-columns);
+  @include media($medium) {
+    display: block;
+  }
 
-      &:last-child {
-        width: flex-grid($columns, $container-columns);
-      }
+  @include media($large) {
+    display: block;
+  }
+}
 
-    } @else {
-      margin-#{$direction}: flex-gutter($container-columns);
-      width: flex-grid($columns, $container-columns);
+@mixin desktop-hide {
+  display: block;
 
-      &:last-child {
-        margin-#{$direction}: 0;
-      }
-    }
+  @include media($small) {
+    display: block;
+  }
+
+  @include media($medium) {
+    display: none;
+  }
+
+  @include media($large) {
+    display: none;
+  }
+}
+
+@mixin mobile-hide {
+  @include clearfix;
+  display: none;
+
+  @include media($small) {
+    display: none;
+  }
+
+  @include media($medium) {
+    display: block;
+  }
+
+  @include media($large) {
+    display: block;
   }
 }

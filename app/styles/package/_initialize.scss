@@ -1,11 +1,8 @@
-@import 'base/normalize';
-
+@import 'helpers/normalize';
 @import 'helpers/utils';
 @import 'helpers/colors';
-@import 'helpers/grid';
 @import 'helpers/typography';
 @import 'helpers/buttons';
-@import 'helpers/base';
 @import 'helpers/tables';
 
 @import 'theme/prose';
@@ -14,8 +11,3 @@
 @import 'components/masthead';
 @import 'components/banner';
 @import 'components/footer';
-
-.test {
-  background-color: blue;
-  color: yellow;
-}

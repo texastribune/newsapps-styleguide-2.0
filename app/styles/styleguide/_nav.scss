@@ -1,6 +1,7 @@
-.menu-button {
+.nav-button {
+  float: right;
+  padding: .5em;
   text-align: center;
-  width: 3em;
 
   @include media($bp-guide) {
     display: none;

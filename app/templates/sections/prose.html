@@ -1,128 +1,147 @@
-<article id="prose">
+<article id="prose" class="prose">
   <header>
     <h2 class="font-xl">Prose</h2>
   </header>
   <p>Basic prose styles, and the follow components, can be found in theme/_prose.scss.</p>
   <p>To add our basic paragraph styles to a class, <code>@extend %prose</code>. You can also wrap elements in <code>.prose</code> to apply the basic paragraph styles.</p>
+  <ul>
+    <li>This is a regular list of items.</li>
+    <li>It doesn't have any styles applied</li>
+    <li>If you want pretty styles/margins/etc. use .bullet.</li>
+  </ul>
+  <ul class="bullet">
+    <li>This is an example of <code>&lt;ul class="bullet"></code></li>
+    <li>It has nice spacing</li>
+  </ul>
+  <ul class="carat">
+    <li>This is an example of <code>&lt;ul class="carat"></code></li>
+    <li>Cause it's cute.</li>
+  </ul>
+
   <div class="code-block">
     <button class="button">Example %prose &amp; .prose</button>
     <pre>
       <code>
-/* Base Prose Theme */
-%prose {
-  @extend %font-base;
-  color: $bodytext-black;
-  display: block;
-  font-family: $base-serif;
-  font-weight: 400;
-  line-height: 1.4;
-  text-align: left;
-}
+        // Base Prose Theme
 
-.prose {
-  @extend %prose;
-  @include clearfix;
+        // Extend for basic paragraph styles
+        %prose {
+          @extend %font-base;
+          color: $bodytext-black;
+          display: block;
+          font-family: $base-serif;
+          font-weight: 400;
+          line-height: 1.3;
+          text-align: left;
 
-  ul {
-    @extend %font-s;
-    font-family: $base-sans-serif;
-    font-weight: 600;
-    list-style: disc;
-    padding: 0 1em;
-  }
+          a {
+            color: $href-teal;
+            text-decoration: none;
 
-  li {
-    margin-bottom: .5em;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
 
-    &amp;:last-child {
-      margin-bottom: 1em;
-    }
-  }
+        .prose {
+          @include clearfix;
 
-}
+          p { @extend %prose; }
+
+          hr {
+            &.thin {
+              background-color: $line-gray;
+              border: 0 none;
+              height: 1px;
+              margin-bottom: 1em;
+            }
+
+            &.yellow {
+              background-color: $tribune-yellow;
+              border: 0 none;
+              height: 2px;
+              margin-bottom: 1em;
+            }
+          }
+
+          &--block {
+            border-color: $tribune-yellow;
+            border-style: solid;
+            border-width: 1px 0;
+            margin: 0 0 1em;
+            padding: 1em 0 0;
+            position: relative;
+          }
+        }
+
+        %caption,
+        .caption {
+          @extend %font-s;
+          color: $text-gray;
+          font-family: $base-sans-serif;
+          font-weight: 400;
+          margin: .25em 0;
+        }
+
+        %explainer-text,
+        .explainer-text {
+          background: $explainer-gray;
+          color: $bodytext-black;
+          font-family: $base-sans-serif;
+          font-weight: 300;
+          line-height: 1.3;
+          margin-bottom: 1em;
+          padding: 1em;
+        }
+
+        %paragraph-header,
+        .paragraph-header {
+          font-family: $base-sans-serif;
+          font-size: .875em;
+          font-weight: 700;
+          letter-spacing: 1px;
+          margin: 0 0 1em;
+          text-transform: uppercase;
+        }
+
+
+        // <ul>
+        .bullet,
+        .carat {
+          font-family: $base-sans-serif;
+          font-weight: 400;
+          list-style: none;
+          padding: 0 1em;
+
+          li {
+            margin-bottom: .5em;
+
+            &:last-child {
+              margin-bottom: 1em;
+            }
+          }
+        }
+
+        .bullet {
+          list-style: disc;
+        }
+
+        .carat {
+          li {
+            &:before {
+              content: '\203A';
+              font-family: $base-sans-serif;
+              margin: 0 .5em 0 -1em;
+              padding: 0;
+            }
+          }
+        }
+
       </code>
     </pre>
   </div>
 
-  <header id="headline">
-    <h3 class="font-l">Headlines, Bylines</h3>
-  </header>
-  <p>Use the classes <code>.headline</code> and <code>.byline</code> for basic headlines.</p>
-  <header>
-    <h1 class="headline">Cat Saves Planet from Apocolypse, Dies in Action</h1>
-    <p class="byline">By <a href="http://www.texastribune.org/about/staff/alexa-ura/">Captain Planet</a> | July 0, 2084</p>
-  </header>
-  <div class="code-block">
-    <button class="button">Example HTML</button>
-    <pre>
-      <code>
-      &lt;header&gt;
-        &lt;h1 class="headline"&gt;Cat Saves Planet from Apocolypse, Dies in Action&lt;/h1&gt;
-        &lt;p class="byline"&gt;By &lt;a href="http://www.texastribune.org/about/staff/alexa-ura/"&gt;Captain Planet&lt;/a&gt; | July 0, 2084&lt;/p&gt;
-      &lt;/header&gt;
-      </code>
-    </pre>
-  </div>
-  <div class="code-block">
-    <button class="button">Example SCSS</button>
-    <pre>
-      <code>
-.headline {
-  @extend %font-l;
-  font-family: $base-sans-serif;
-  font-weight: 600;
-  margin: 1.25em 0 .6em;
-}
-
-.byline {
-  @extend %font-s;
-  font-family: $base-sans-serif;
-  margin-bottom: 1em;
-
-  a {
-    font-weight: 800;
-  }
-}
-
-      </code>
-    </pre>
-  </div>
-
-  <header id="captions">
-    <h3 class="font-l">Captions</h3>
-  </header>
-  <p>Captions for photos and other media elements are styled using <code>.caption</code>. Images within .prose will fill 100% of the available width, unless otherwise specified.</p>
-  <figure class="prose">
-    <img src="http://placekitten.com/g/500/300">
-    <figcaption class="caption">This is a picture of a kitten inside a figure.prose.</figcaption>
-  </figure>
-
-  <div class="code-block">
-    <button class="button">Example HTML</button>
-    <pre>
-      <code>
-      &lt;figure class="prose"&gt;
-        &lt;img src="http://placekitten.com/g/500/300"&gt;
-        &lt;figcaption class="caption"&gt;This is a picture of a kitten inside a figure.prose.&lt;/figcaption&gt;
-      &lt;/figure&gt;
-      </code>
-    </pre>
-  </div>
-  <div class="code-block">
-    <button class="button">Example SCSS</button>
-    <pre>
-      <code>
-%caption,
-.caption {
-  @extend %font-s;
-  color: $text-gray;
-  font-family: $base-sans-serif;
-  font-weight: 400;
-  margin: .25em 0;
-}
-      </code>
-    </pre>
-  </div>
 
   <header id="paragraph-header">
     <h3 class="paragraph-header">Paragraph Headers</h3>
@@ -186,10 +205,10 @@
   <header>
     <h3 id="block-text" class="font-m">Prose Blocks</h3>
   </header>
-  <p>Add <code>.prose-block</code> to elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose. In most cases, you'll put this type of content in an <code>&lt;aside&gt;</code>.</p>
+  <p>Add <code>.prose--block</code> to elements that you want to highlight inside your prose with a yellow border on top and bottom, such as block-quotes or embedded lists. This class does not need to be wrapped inside .prose. In most cases, you'll put this type of content in an <code>&lt;aside&gt;</code>.</p>
   <p>Note: To normalize <code>&lt;aside&gt;</code> and <code>&lt;blockquote&gt;</code> margins across browsers, we've included "margin: 0 0 1em" in helpers/_base.scss.</p>
   <!-- Lists -->
-  <aside class="prose-block">
+  <aside class="prose--block">
     <h3 class="paragraph-header">Example List</h3>
     <ul class="bullet">
       <li>Lists are often used to call out important points.</li>
@@ -201,7 +220,7 @@
     <button class="button">Example HTML</button>
     <pre>
       <code>
-      &lt;aside class="prose-block"&gt;
+      &lt;aside class="prose--block"&gt;
         &lt;h3 class="paragraph-header"&gt;Example list&lt;/h3&gt;
         &lt;ul class="bullet"&gt;
           &lt;li&gt;One&lt;/li&gt;
@@ -216,71 +235,13 @@
     <button class="button">Example SCSS</button>
     <pre>
       <code>
-.prose-block {
+.prose--block {
   border-color: $tribune-yellow;
   border-style: solid;
   border-width: 1px 0;
   margin-bottom: 1em;
   padding: 1em 0 0;
   position: relative;
-}
-      </code>
-    </pre>
-  </div>
-
-  <header id="block-quotes">
-    <h3 class="font-l">Block Quotes</h3>
-  </header>
-  <p>Use a <code>.blockquote</code> for the text of a block quote, and .blockquote-source for the attribution. You can include the block quote in an <code>&lt;aside&gt;</code> or <code>&lt;blockquote&gt;</code> &mdash; whichever you prefer. We recommending using <code>&lt;q&gt;</code> for your quotes to ensure the browser applies curled double-quotations. If you use a <code>&lt;p class="blockquote"&gt;</code>, remember to include HTML ASCII characters for curled double quotations on either end of the text.</p>
-  <p>Below are two examples of block quotes. The first is an <code>&lt;aside class="prose-block"&gt;</code> with &<code>lt;q class="blockquote"&gt;</code>. The second is a <code>&lt;blockquote class="prose-block"&gt;</code> with <code>&lt;p class="blockquote"&gt;</code>:</p>
-  <aside class="prose-block">
-    <q class="blockquote">You know what&rsquo;s awesome? Cats. Cats are awesome.</q>
-    <p class="blockquote-source">&mdash; Becca Aaronson, cat enthusiast</p>
-  </aside>
-  <blockquote class="prose-block">
-    <p class="blockquote">&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;</p>
-    <p class="blockquote-source">&mdash; Becca Aaronson, cat enthusiast</p>
-  </blockquote>
-  <div class="code-block">
-    <button class="button">Example HTML</button>
-    <pre>
-      <code>
-      // Example 1
-      &lt;aside class="prose-block"&gt;
-        &lt;q class="blockquote"&gt;You know what&rsquo;s awesome? Cats. Cats are awesome.&lt;/q&gt;
-        &lt;p class="blockquote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
-      &lt;/aside&gt;
-
-      // Example 2
-      &lt;blockquote class="prose-block"&gt;
-        &lt;p class="blockquote"&gt;&ldquo;You know what&rsquo;s awesome? Cats. Cats are awesome.&rdquo;&lt;/p&gt;
-        &lt;p class="blockquote-source"&gt;&mdash; Becca Aaronson, cat enthusiast&lt;/p&gt;
-      &lt;/blockquote&gt;
-      </code>
-    </pre>
-  </div>
-  <div class="code-block">
-    <button class="button">Example SCSS</button>
-    <pre>
-      <code>
-.blockquote {
-  @extend %font-m;
-  font-family: $base-serif;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 1.2;
-  position: relative;
-  text-align: left;
-}
-
-q.blockquote {
-  display: block;
-}
-
-.blockquote-source {
-  @extend %font-base;
-  font-family: $base-sans-serif;
-  font-weight: 300;
 }
       </code>
     </pre>

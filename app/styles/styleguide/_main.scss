@@ -2,18 +2,37 @@ $bp-guide: new-breakpoint(min-width 850px);
 $bp-guide-header: new-breakpoint(min-width 600px);
 $bp-guide-header-mobile: new-breakpoint(max-width 600px);
 
-article {
-  border-bottom: 1px solid $tribune-yellow;
-  margin-bottom: 2em;
+.code-block {
+  pre {
+    background-color: $background-gray;
+    display: none;
+    width: 100%;
+  }
 
-  &:last-child {
-    border-bottom: 0;
+  code {
+    line-height: 1.3;
+    padding: 0;
   }
 }
 
+code {
+  background-color: $background-gray;
+  border-radius: 3px;
+  padding: .25em .5em;
+}
+
 .main {
+  margin: 0 auto;
+  max-width: 900px;
+
   article {
     @include clearfix;
+    border-bottom: 1px solid $tribune-yellow;
+    margin-bottom: 2em;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 }
 
@@ -49,7 +68,7 @@ article {
   }
 
   h1 {
-    @include font-size(80, $pct:.9, $bp:$bp-guide-header-mobile);
+    display: inline-block;
     font-family: league-gothic, $base-sans-serif;
     margin-bottom: .25em;
   }
@@ -57,12 +76,6 @@ article {
 
 .teal-button {
   @include btn($teal);
-}
-
-.button,
-.teal-button,
-.ghost-button {
-  margin-bottom: 1em;
 }
 
 .button,
