@@ -1,3 +1,30 @@
+// Clearfix
+// --------
+// Ensure elements don't accidentally overlap.
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+ }
+}
+
+@mixin outer-container($local-max-width: $max-width) {
+  @include clearfix;
+  max-width: $local-max-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+$grid-columns: 12;
+$default-grid-columns: 12;
+$default-feature: min-width;
+
 @mixin media($query: $feature $value $columns, $total-columns: $grid-columns) {
   @if length($query) == 1 {
     @media screen and ($default-feature: nth($query, 1)) {
@@ -31,6 +58,53 @@
     @media #{$media-query} {
       @content;
       $grid-columns: $default-grid-columns !global;
+    }
+  }
+}
+
+$container-display-table: true !default;
+$default-layout-direction: LTR !default;
+$layout-direction: LTR !global;
+
+@mixin span-columns($span: $columns of $container-columns, $display: block) {
+  $columns: nth($span, 1);
+  $container-columns: container-span($span);
+
+  $parent-columns: get-parent-columns($container-columns) !global;
+
+  $direction: get-direction($layout-direction, $default-layout-direction);
+  $opposite-direction: get-opposite-direction($direction);
+
+  $display-table: is-display-table($container-display-table, $display);
+
+  @if $display-table  {
+    display: table-cell;
+    width: percentage($columns / $container-columns);
+  } @else {
+    float: #{$opposite-direction};
+
+    @if $display != no-display {
+      display: block;
+    }
+
+    @if $display == collapse {
+      @include -neat-warn("The 'collapse' argument will be deprecated. Use 'block-collapse' instead.");
+    }
+
+    @if $display == collapse or $display == block-collapse {
+      width: flex-grid($columns, $container-columns) + flex-gutter($container-columns);
+
+      &:last-child {
+        width: flex-grid($columns, $container-columns);
+      }
+
+    } @else {
+      margin-#{$direction}: flex-gutter($container-columns);
+      width: flex-grid($columns, $container-columns);
+
+      &:last-child {
+        margin-#{$direction}: 0;
+      }
     }
   }
 }
