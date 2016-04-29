@@ -9,7 +9,6 @@
 .nav {
   @include clearfix;
   @include hide($default-desktop, max-width);
-
   float: none;
   margin: 0 1em 1.5em 0;
   width: 100%;

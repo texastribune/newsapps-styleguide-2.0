@@ -7,6 +7,10 @@ $bp-guide-header-mobile: new-breakpoint(max-width 600px);
     background-color: $background-gray;
     display: none;
     width: 100%;
+
+    &.show {
+      display: block;;
+    }
   }
 
   code {
@@ -39,19 +43,6 @@ code {
 .fix {
   position: fixed;
   top: 0;
-}
-
-.newsapps-logo {
-  @include clearfix;
-  display: inline-block;
-  margin: 0 1em 1em 0;
-  max-width: 4.7em;
-  text-align: left;
-  width: 100%;
-
-  @include media($bp-guide-header) {
-    max-width: 5.5em;
-  }
 }
 
 .styleguide-header {
