@@ -5,11 +5,12 @@ The Texas Tribune's framework for basic styles used on news apps projects.
 ## Current Features
 
 + Colors
-+ Grid specs
-+ Grid mixins
++ Utils
 + Typography
-+ Prose
++ Prose / Graphics Themes
 + Buttons
++ Tables
++ Logos
 
 ### Quickstart
 
