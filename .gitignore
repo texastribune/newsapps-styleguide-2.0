@@ -45,4 +45,5 @@ app/assets/images/*
 # Compiled project
 dist
 data/*
+!data/colors.json
 !data/.gitkeep
