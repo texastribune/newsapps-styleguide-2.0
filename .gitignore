@@ -33,6 +33,9 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
+# Apple
+.DS_Store
+
 # assets
 app/assets/fonts/*
 !app/assets/fonts/.gitkeep
