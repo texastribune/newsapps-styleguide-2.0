@@ -1,8 +1,8 @@
 /* global $ */
 
 $(document).ready(function () {
-  $navOptions = $('#nav-options');
-  $windowWidth = $(window).width();
+  var $navOptions = $('#nav-options');
+  var $windowWidth = $(window).width();
 
   // Hide-Show code blocks
   $('.code-block > .button').click(function(){
