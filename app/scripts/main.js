@@ -1,23 +1,26 @@
 /* global $ */
 
-$(document).ready(function(){
+$(document).ready(function () {
+  $navOptions = $('#nav-options');
+  $windowWidth = $(window).width();
+
   // Hide-Show code blocks
   $('.code-block > .button').click(function(){
     $(this).next('pre').toggle();
   });
 
-  $('#menu').click(function() {
-    $('#nav-options').toggle();
+  $('#menu').click(function () {
+    $navOptions.toggle();
   });
 
-  if ($(window).width >= 768) {
+  if ($windowWidth >= 768) {
     console.log('hello');
-    $('#nav-options').show();
+    $navOptions.show();
   }
 });
 
-$(window).resize(function() {
-  if ($(window).width() >= 768) {
-    $('#nav-options').show();
+$(window).resize(function () {
+  if ($windowWidth >= 768) {
+    $navOptions.show();
   }
 });
