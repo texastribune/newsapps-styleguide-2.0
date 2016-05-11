@@ -1,0 +1,84 @@
+{% extends 'layouts/base.html' %}
+
+{% block styles %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<main class="main">
+  <nav>
+    <header class="styleguide-header">
+      <h1 class="font-xxl">Interactive Data and Visuals &mdash; Style Guide</h1>
+      <button id="menu" class="nav-button button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </header>
+  </nav>
+  <article class="prose content-block">
+    <article>
+      <ul id="nav-options" class="nav clear-list-styles">
+        <li><a href="#helpers">Helpers</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#logos">Trib Logos</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#utils">Utils</a></li>
+        <li><a href="#prose">Prose</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#graphic">Graphic Theme</a></li>
+        <li><a href="#tables">Tables</a></li>
+      </ul>
+      <p>The goal of this style guide is to create a front-end framework to maintain consistency across IDV projects, while giving each designer and developer the flexibility to code in their own unique and creative way. These styles provide a starting point for visual graphics and larger projects, and aren't intended to be the basis for an entire site design.</p>
+      <p>Our style files are written in <a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">SCSS</a> &mdash; a Sass syntax that builds on the existing CSS syntax. With SCSS, we can use all the great features of Sass, such as @mixins, %placeholders and $variables, but can write in the more familiar (and more expressive) CSS syntax.</p>
+      <p>If you're unfamiliar with Sass or SCSS, read this <a href="http://sass-lang.com/guide">guide</a> to catch up on the basics.</p>
+      <p>Currently, our partial style files are broken into three folders &mdash; helpers and theme. You'll find a thorough description of the partials in the helpers folder below.</p>
+    </article>
+    <article id="helpers">
+      <header>
+        <h3 class="font-l">The Helpers</h3>
+      </header>
+      <p>Everything you need to jump start a project is contained in the helpers folder. Here's a quick explanation of each of the partials:</p>
+      <header>
+        <h4 class="font-base paragraph-header">_utils.scss</h4>
+      </header>
+      <p class="explainer-text">Contains some base variables like default breakpoints and other @mixins for basic formatting. Jump to <a href="#utils">Utils</a> to learn more.</p>
+      <header>
+        <h4 class="font-base paragraph-header">_buttons.scss:</h4>
+      </header>
+      <p class="explainer-text">Creates a button mixin, to include buttons in any color. Also allows for solid color buttons or ghost buttons, based on the arguments you insert.</p>
+      <header>
+        <h4 class="font-base paragraph-header">_colors.scss:</h4>
+      </header>
+      <p class="explainer-text">All of our colors are assigned to $variables, most of which have a descriptive name to help you decide when to use it. For example, $rep-red and $dem-blue are used for typical political party designations.</p>
+      <header>
+        <h4 class="font-base paragraph-header">_tables.scss:</h4>
+      </header>
+      <p class="explainer-text">This partial contains one mixin to rule them all &mdash; i.e. all the variations of mobile table styles. Skip to <a href="#tables">Tables</a> to learn more.</p>
+      <header>
+        <h4 class="font-base paragraph-header">_typography.scss:</h4>
+      </header>
+      <p class="explainer-text">Our style guide has a modular typography system. By changing the size $variables, you can change font-sizes across the entire project. The system also allows you to designate font-size with .classes in your HTML or @extend %font-sizes on new classes.</p>
+    </article>
+
+    {% include "sections/colors.html" %}
+    {% include "sections/logos.html" %}
+    {% include "sections/typography.html" %}
+    {% include "sections/utils.html" %}
+    {% include "sections/prose.html" %}
+    {% include "sections/buttons.html" %}
+    {% include "sections/graphic.html" %}
+    {% include "sections/tables.html" %}
+  </article>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="content-block">
+    <nav class="first-nav">
+      <ul class="clear-list-styles">
+        <li>&copy; 2016 <a href="http://www.texastribune.org/">The Texas Tribune</a></li>
+      </ul>
+    </nav>
+</footer>
+{% endblock %}
+
+{% block script %}
+{{ super()}}
+{% endblock %}

@@ -1,20 +1,28 @@
 .swatches {
-  @include list-grid($default-desktop, 12, 3);
+  ul {
+    @include clearfix;
+    margin-bottom: 1em;
+  }
 
   li {
-    background-color: $background-gray;
-    padding: .5em;
+    float: left;
     margin-bottom: .5em;
     text-align: center;
+    width: 33%;
   }
 
   p {
     margin-bottom: .25em;
+    text-align: center;
   }
 }
 
 .swatch {
   height: 4em;
-  width: 100%;
   margin-bottom: .5em;
+  width: 100%;
+
+  &--wrapper {
+    padding: 0 .5em 0 0;
+  }
 }

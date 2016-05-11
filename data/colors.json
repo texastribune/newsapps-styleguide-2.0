@@ -1,7 +1,4 @@
 {
-  "META": {
-    "project_title": "News Apps Style Guide"
-  },
   "TRIBUNE_COLORS": [
     {
       "name": "$tribune-yellow",

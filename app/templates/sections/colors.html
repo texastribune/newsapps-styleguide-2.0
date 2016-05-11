@@ -1,5 +1,5 @@
 <article id="colors">
-  <header id="colors">
+  <header>
     <h2 class="font-xl">Colors</h2>
   </header>
 
@@ -7,39 +7,45 @@
     <header>
       <h3 class="font-m">Tribune Colors</h3>
     </header>
-    <ul>
-    {% for color in TRIBUNE_COLORS %}
+    <ul class="clear-list-styles">
+    {% for color in colors.TRIBUNE_COLORS %}
       <li>
-        <div class="swatch" style="background-color: {{ color.rgb }}"></div>
-        <p class="font-s">{{ color.name }}</p>
-        <p class="font-s">{{ color.hex }}</p>
-        <p class="font-s">{{ color.rgb }}</p>
+        <div class="swatch--wrapper">
+          <div class="swatch" style="background-color: {{ color.rgb }}"></div>
+          <p class="font-s">{{ color.name }}</p>
+          <p class="font-s">{{ color.hex }}</p>
+          <p class="font-s">{{ color.rgb }}</p>
+        </div>
       </li>
     {% endfor %}
     </ul>
     <header>
       <h3 class="font-m">Party Colors</h3>
     </header>
-    <ul>
-    {% for color in PARTY_COLORS %}
+    <ul class="clear-list-styles">
+    {% for color in colors.PARTY_COLORS %}
       <li>
-        <div class="swatch" style="background-color: {{ color.rgb }}"></div>
-        <p class="font-s">{{ color.name }}</p>
-        <p class="font-s">{{ color.hex }}</p>
-        <p class="font-s">{{ color.rgb }}</p>
+        <div class="swatch--wrapper">
+          <div class="swatch" style="background-color: {{ color.rgb }}"></div>
+          <p class="font-s">{{ color.name }}</p>
+          <p class="font-s">{{ color.hex }}</p>
+          <p class="font-s">{{ color.rgb }}</p>
+        </div>
       </li>
     {% endfor %}
     </ul>
     <header>
       <h3 class="font-m">Shades of Gray</h3>
     </header>
-    <ul>
-    {% for color in SHADES_GRAY %}
+    <ul class="clear-list-styles">
+    {% for color in colors.SHADES_GRAY %}
       <li>
-        <div class="swatch" style="background-color: {{ color.rgb }}"></div>
-        <p class="font-s">{{ color.name }}</p>
-        <p class="font-s">{{ color.hex }}</p>
-        <p class="font-s">{{ color.rgb }}</p>
+        <div class="swatch--wrapper">
+          <div class="swatch" style="background-color: {{ color.rgb }}"></div>
+          <p class="font-s">{{ color.name }}</p>
+          <p class="font-s">{{ color.hex }}</p>
+          <p class="font-s">{{ color.rgb }}</p>
+        </div>
       </li>
     {% endfor %}
     </ul>
@@ -47,13 +53,15 @@
     <header>
       <h3 class="font-m">Graphic Colors</h3>
     </header>
-    <ul>
-    {% for color in GRAPHIC_COLORS %}
+    <ul class="clear-list-styles">
+    {% for color in colors.GRAPHIC_COLORS %}
       <li>
-        <div class="swatch" style="background-color: {{ color.rgb }}"></div>
-        <p class="font-s">{{ color.name }}</p>
-        <p class="font-s">{{ color.hex }}</p>
-        <p class="font-s">{{ color.rgb }}</p>
+        <div class="swatch--wrapper">
+          <div class="swatch" style="background-color: {{ color.rgb }}"></div>
+          <p class="font-s">{{ color.name }}</p>
+          <p class="font-s">{{ color.hex }}</p>
+          <p class="font-s">{{ color.rgb }}</p>
+        </div>
       </li>
     {% endfor %}
     </ul>

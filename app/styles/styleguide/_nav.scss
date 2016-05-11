@@ -1,23 +1,17 @@
-#menu {
+.nav-button {
+  float: right;
+  padding: .5em;
   text-align: center;
-  width: 100%;
 
-  @include media($bp-guide) {
-    display: none;
-  }
-
+  @include hide($default-desktop);
 }
 
-#side-nav {
-  display: none;
-}
-
-.side-nav {
+.nav {
   @include clearfix;
-
-  ul {
-    margin: 0 0 1.5em;
-  }
+  @include hide($default-desktop, max-width);
+  float: none;
+  margin: 0 1em 1.5em 0;
+  width: 100%;
 
   li {
     border-bottom: 1px solid $background-gray;
@@ -26,22 +20,21 @@
     a {
       color: $bodytext-black;
       display: block;
-      padding: 1em;
+      padding: .85em;
       text-decoration: none;
     }
 
     &:hover {
       background-color: transparentize($teal, .5);
-      transition: padding .2s ease;
       padding-left: .25em;
-
+      transition: padding .2s ease;
     }
-
   }
 
-  @include media($bp-guide) {
+  @media (min-width: $default-desktop) {
     float: left;
-    display: block;
+    margin: 0 1em 1.5em 0;
+    width: 15em;
   }
 
 }
