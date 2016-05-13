@@ -21,8 +21,8 @@ config.data = {
   ],
   sheets: [
     {
-      fileid: '1EACmSpajC1V7nJtwIxfA9aR-HAbTSDugSjStSSKWEaE',
-      name: 'metadata',
+      fileid: '1i-RgfdltaWyxRVs3x_F9Xblj0Y9jUyHvoAPbgokR_bU',
+      name: 'COLORS',
       copytext: {
         basetype: 'objectlist'
       }

@@ -9,6 +9,11 @@
       "name": "$tribune-teal",
       "rgb": "rgb(0, 137, 144)",
       "hex": "#008990"
+    },
+    {
+      "name": "$new-color",
+      "rgb": "rgb(3, 234, 21)",
+      "hex": "#ea1503"
     }
   ],
   "GRAPHIC_COLORS": [
@@ -55,7 +60,7 @@
       "hex": "#D64946"
     }
   ],
-  "SHADES_GRAY": [
+  "SHADES_OF_GRAY": [
     {
       "name": "$black",
       "rgb": "rgb(0, 0, 0)",
@@ -90,16 +95,6 @@
       "name": "$href-offwhite",
       "rgb": "rgb(221, 221, 221)",
       "hex": "#DDD"
-    },
-    {
-      "name": "$background-gray",
-      "rgb": "rgb(245, 245, 245)",
-      "hex": "#F5F5F5"
-    },
-    {
-      "name": "$white",
-      "rgb": "rgb(255, 255, 255)",
-      "hex": "#FFF"
     }
   ]
 }
